@@ -1,52 +1,82 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-	
+<html lang="en">
+<head>
     <title>Bitcoin Key Generator</title>
-	
+	<meta charset="utf-8">
 	<!-- Library used for QR codes -->
 	<!-- https://github.com/davidshimjs/qrcodejs -->
 	<script src="./js/qrcode_js/qrcode.min.js"></script>
-	
 	<!-- Library used for address generation -->
 	<!-- http://procbits.com/media/2013/08/bitcoinjs-min.js -->
 	<script src="./js/bitcoin_js/bitcoinjs-min-legacy.js"></script>
 	
-	
-  </head>
-  <body>
+	  <!-- local stylesheet-->
+  <link rel="stylesheet" href="./css/style.css">
   
-	<h2>Bitcoin Wallet Generator</h2>
+    <!-- bootsrap library import and compatibility for mobile devices added-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+  <body>
+  <!--Navbar-->
+	<nav class="navbar navbar-inverse navbar-static-top">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span> 
+		  </button>
+		  <a class="navbar-brand" href="#">Bitcoin Wallet Generator</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./about.html">About</a></li>
+			<li><a href="./dev-notes.html">Dev Notes</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
 	
-	<strong>What does this do?</strong><br/>
-	When you click the Generate Wallet button, the app will create a new random paper wallet for you to use.
-	This wallet is designed for Bitcoin and Bitcoin derivates (such as Bitcoin Cash).
-	Print the page or save your key information in a secure place.
-	<br/><br/>
-	<button onclick="generateBitcoinKeys();">Generate Wallet</button><br/><br/>
-
-	<div>
-		<div style="width:50%; float: left;">
-			<span id="privateKeyLabel"></span><br/>
-			<span id="privateKey"></span><br/><br/>
-			<div id="qrcodePrivate"></div>
-		</div>
+	<!--main body of index-->
+	<div id="index">
+		<div class="container text-center">
+			<h2>Bitcoin Wallet Generator</h2>
+			
+			<strong>What does this do?</strong><br/>
+			When you click the Generate Wallet button, the app will create a new random paper wallet for you to use.
+			This wallet is designed for Bitcoin and Bitcoin derivates (such as Bitcoin Cash).
+			Print the page or save your key information in a secure place.
+			<br/><br/>
+			<button class="btn btn-primary" onclick="generateBitcoinKeys();">Generate Wallet</button><br/><br/>
 		
-		<div style="width:50%; float: right;">
-			<span id="walletAddressLabel"></span><br/>
-			<span id="walletAddress"></span><br/><br/>
-			<div id="qrcodeWallet"></div>
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<span id="privateKeyLabel"></span><br/>
+				<span id="privateKey"></span><br/><br/>
+				<div id="qrcodePrivate" class="qrcode"></div>
+			</div>
+			
+			<div class="col-md-6 text-center">
+				<span id="walletAddressLabel"></span><br/>
+				<span id="walletAddress"></span><br/><br/>
+				<div id="qrcodeWallet" class="qrcode"></div>
+			</div>
+			
 		</div>
+		<div class="container-fluid"><em>Disclaimer: This app was created for educational purposes. This is experimental software. Use at your own risk.</em></div>
 	</div>
 	
-	<br/>
 	
-	<div><em>Disclaimer: This app was created for educational purposes. This is experimental software. Use at your own risk.</em></div>
-  
+  </div>
   </body>
+
+
   
-  <script type="text/javascript">
+<script type="text/javascript">
 
   
 	function generateHexString(length) 
