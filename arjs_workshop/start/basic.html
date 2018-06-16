@@ -67,7 +67,6 @@
           gameText.setAttribute('size', '5');
           gameText.setAttribute('material', 'opacity: 0');
           console.log("gameText == ", gameText);
-          gameText.flushToDOM();
           scene.flushToDOM();
           console.log("gameText == ", gameText);
         });        
@@ -83,14 +82,12 @@
           //myBox.setAttribute('position', '0 1 0');
           myBox['position'] = '0 1 0';
           console.log("myBox == ", myBox);
-          myBox.flushToDOM();
           scene.flushToDOM();
         }, 3000);
         setTimeout(function(){   
           //myBox.setAttribute('position', '0 1.5 0');
           myBox['position'] = '0 1.5 0';
           console.log("myBox == ", myBox);
-          myBox.flushToDOM();
           scene.flushToDOM();
         }, 6000);
       
@@ -132,7 +129,7 @@
     </div>    
 
     <!-- Define your 3d scene and enabled ar.js -->
-    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: true;'>
+    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: true;' debug>
 
       <!-- Declare assets for use in the scene. -->
       <a-assets timeout="1000">
