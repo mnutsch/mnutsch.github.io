@@ -19,6 +19,28 @@
     <script src='https://mnutsch.github.io/arjs_workshop/start/vendor/arjs/build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = 'https://mnutsch.github.io/arjs_workshop/start/vendor/three.js/'</script>
 
+    <script>		
+      //wait until the page loads to perform the following
+      window.onload = function () 
+      {
+
+        //add a sphere programatically
+        var gameBall = document.createElement('a-sphere');
+        var gameBallX = 0;
+        var gameBallY = 1.25;
+        var gameBallZ = -1;
+        var gameBallVelocityX = 0.05;
+        var gameBallVelocityY = 0.1;
+        var gameBallRadius = 0.15;
+        gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
+        gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
+        console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
+        gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
+        scene.appendChild(gameBall); //add the sphere to the scene
+
+      }
+    </script>
+
   </head>
 
   <!-- start the body of your page -->
@@ -68,27 +90,6 @@
 
     </a-scene>
 
-    <script>		
-      //wait until the page loads to perform the following
-      window.onload = function () 
-      {
-
-        //add a sphere programatically
-        var gameBall = document.createElement('a-sphere');
-        var gameBallX = 0;
-        var gameBallY = 1.25;
-        var gameBallZ = -1;
-        var gameBallVelocityX = 0.05;
-        var gameBallVelocityY = 0.1;
-        var gameBallRadius = 0.15;
-        gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
-        gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
-        console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
-        gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
-        scene.appendChild(gameBall); //add the sphere to the scene
-
-      }
-    </script>
 
   </body>
 
