@@ -90,6 +90,8 @@
 
           //detect collisions
           //if the object hits a boundary, then reverse it's vector
+          console.log("myBoxPosition.x == ", myBoxPosition.x);
+          console.log("maxX == ", maxX);
           if(myBoxPosition.x >= maxX){
             console.log("The ball bounced off the max X border.")
             mySphereVector.x = mySphereVector.x * -1;
