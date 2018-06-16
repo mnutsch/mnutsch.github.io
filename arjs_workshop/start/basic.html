@@ -76,18 +76,21 @@
         console.log("helloWorldPlane == ", helloWorldPlane);
         console.log("helloWorldEntity == ", helloWorldEntity); 
 
-        var myBox = document.getElementById('myBox');
+        var myBox = document.getElementById('myBox');      
         console.log("myBox == ", myBox);
+        console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
         setTimeout(function(){   
           myBox.setAttribute('position', '0 1 0');
           //myBox['position'] = '0 1 0';
           console.log("myBox == ", myBox);
+          console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
           scene.flushToDOM();
         }, 3000);
         setTimeout(function(){   
           myBox.setAttribute('position', '0 1.5 0');
           //myBox['position'] = '0 1.5 0';
           console.log("myBox == ", myBox);
+          console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
           scene.flushToDOM();
         }, 6000);
       
