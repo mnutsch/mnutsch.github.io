@@ -39,19 +39,19 @@
         gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
         console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
         gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
-        document.querySelector('a-scene').appendChild(gameBall);
+        document.querySelector('a-scene').appendChild(gameBall); //add the sphere to the scene
         gameBall.addEventListener('loaded', function () {
           console.log('sphere attached');
         });
 
+        //add text programatically
         var gameText = document.createElement('a-entity');
         gameText.setAttribute('mixin', 'red');
-        scene.appendChild(gameText);
         gameText.setAttribute('text', 'text: Game Text');
         gameText.setAttribute('position', '-1.8 2 0');
         gameText.setAttribute('size', '0.75');
         gameText.setAttribute('material', 'opacity: 0');
-        document.querySelector('a-scene').appendChild(gameText);
+        document.querySelector('a-scene').appendChild(gameText); //add the text to the scene
         gameText.addEventListener('loaded', function () {
           console.log('text attached');
         });
