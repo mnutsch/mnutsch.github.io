@@ -67,7 +67,19 @@
         console.log("helloWorldEntity == ", helloWorldEntity); 
 
         scene.addEventListener('loaded', function () {
-          console.log('scene loaded');            
+          console.log('scene loaded');  
+          var myBox = document.getElementById('mybox');
+          console.log("myBox == ", myBox);
+
+          setTimeout(function(){   
+            myBox.setAttribute('position', '0 1 0');
+            console.log("myBox == ", myBox);
+          }, 3000);
+
+          setTimeout(function(){   
+            myBox.setAttribute('position', '0 1.5 0');
+            console.log("myBox == ", myBox);
+          }, 6000);
         })
       
 
@@ -116,10 +128,9 @@
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
-        <!--
-        <a-box position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.5; side:double; color:blue;'>          
+        <a-box id="myBox" position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.5; side:double; color:blue;'>          
         </a-box>        
-      -->
+      
 
       </a-anchor>
 
