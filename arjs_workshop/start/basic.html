@@ -92,27 +92,27 @@
           //if the object hits a boundary, then reverse it's vector
           console.log("myBoxPosition.x == ", myBoxPosition.x);
           console.log("maxX == ", maxX);
-          if(myBoxPosition.x >= maxX){
+          if(mySpherePosition.x >= maxX){
             console.log("The ball bounced off the max X border.")
             mySphereVector.x = mySphereVector.x * -1;
           }
-          if(myBoxPosition.x <= minX){
+          if(mySpherePosition.x <= minX){
             console.log("The ball bounced off the min X border.")
             mySphereVector.x = mySphereVector.x * -1;
           }
-          if(myBoxPosition.y >= maxY){
+          if(mySpherePosition.y >= maxY){
             console.log("The ball bounced off the max Y border.")
             mySphereVector.y = mySphereVector.y * -1;
           }
-          if(myBoxPosition.y <= minY){
+          if(mySpherePosition.y <= minY){
             console.log("The ball bounced off the min Y border.")
             mySphereVector.y = mySphereVector.y * -1;
           }
-          if(myBoxPosition.z >= maxZ){
+          if(mySpherePosition.z >= maxZ){
             console.log("The ball bounced off the max Z border.")
             mySphereVector.z = mySphereVector.z * -1;
           }
-          if(myBoxPosition.z <= minZ){
+          if(mySpherePosition.z <= minZ){
             console.log("The ball bounced off the min Z border.")
             mySphereVector.z = mySphereVector.z * -1;
           }
