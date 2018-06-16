@@ -77,11 +77,13 @@
         var myBox = document.getElementById('myBox');
         console.log("myBox == ", myBox);
         setTimeout(function(){   
-          myBox.setAttribute('position', '0 1 0');
+          //myBox.setAttribute('position', '0 1 0');
+          myBox['position'] = '0 1 0');
           console.log("myBox == ", myBox);
         }, 3000);
         setTimeout(function(){   
-          myBox.setAttribute('position', '0 1.5 0');
+          //myBox.setAttribute('position', '0 1.5 0');
+          myBox['position'] = '0 1.5 0');
           console.log("myBox == ", myBox);
         }, 6000);
       
