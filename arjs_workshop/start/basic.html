@@ -23,6 +23,10 @@
       //wait until the page loads to perform the following
       window.onload = function () 
       {
+        //for keeping track of the date and time
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
       
         var intervalLength = 25; //determines the speed of the game
 
@@ -85,6 +89,17 @@
           }, 6000);
         })
       
+        //Timer for game
+        setInterval(function()
+        {
+          //ADD CODE HERE TO DO THINGS
+          
+          date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+          time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          dateTime = date+' '+time;
+          console.log("The current time is: " + dateTime);
+              
+        }, intervalLength);
 
       }
     </script>
