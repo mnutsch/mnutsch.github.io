@@ -24,7 +24,7 @@
       window.onload = function () 
       {
         //define the scene
-        document.querySelector('a-scene').object3D;
+        var scene=document.querySelector('a-scene').object3D;
 
         //add a sphere programatically
         var gameBall = document.createElement('a-sphere');
@@ -48,7 +48,7 @@
   <!-- start the body of your page -->
   <body style='margin : 0px; overflow: hidden;'>
     <!-- add some info at the top of the page -->
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; text-color: white;'>
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
       Instructions:<br/>
       Point your camera at the AR Code.
     </div>    
@@ -68,7 +68,7 @@
 
         <!-- Basic Text -->
         <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-        <<!--a-entity position='0 0 0' scale='5 5 5' text="value: Hello World;"></a-entity>-->
+        <!--<a-entity position='0 0 0' scale='5 5 5' text="value: Hello World;"></a-entity>-->
 
         <!-- Basic plane. -->
         <!-- see: https://aframe.io/docs/0.8.0 -->
@@ -76,8 +76,8 @@
 
         <!-- Text fit onto a plane -->
         <a-plane
-        geometry="primitive: plane; width: 1; height: auto"
-        material="opacity: 0.5; color: green;"
+        geometry="primitive: plane; width: 1; height: 1; height: auto"
+        material="opacity: 0.1; color: green;"
         text="value: Hello AR.; align: center;"></a-plane>
 
         <!-- Basic Box -->             
