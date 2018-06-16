@@ -64,9 +64,9 @@
         //create variables to track movement vectors      
         var mySphereVector = {};
         mySphereVector.y = 0;
-        //pick a random number between 0.000 and 0.050 for both x and z vectors
-        mySphereVector.x = (Math.floor(Math.random() * 50) / 1000)
-        mySphereVector.z = (Math.floor(Math.random() * 50) / 1000)
+        //pick a random number between 0.010 and 0.050 for both x and z vectors
+        mySphereVector.x = ((Math.floor(Math.random() * 50) + 10) / 1000)
+        mySphereVector.z = ((Math.floor(Math.random() * 50) + 10) / 1000)
       
         //Timer for animations
         setInterval(function()
