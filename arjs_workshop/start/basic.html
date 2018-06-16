@@ -27,15 +27,15 @@
     <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
       Instructions:<br/>
       Point your camera at the AR Code.
-    </div>
-
-    <!-- Declare assets for use in the scene. -->
-    <a-assets timeout="10000">
-      <!-- declare assets here -->    
-    </a-assets>
+    </div>    
 
     <!-- Define your 3d scene and enabled ar.js -->
     <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: true;'>
+
+      <!-- Declare assets for use in the scene. -->
+      <a-assets timeout="10000">
+        <!-- declare assets here -->    
+      </a-assets>
 
       <!-- Create a anchor to attach your augmented reality -->
       <a-anchor hit-testing-enabled='true'>
