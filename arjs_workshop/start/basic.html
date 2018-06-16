@@ -24,7 +24,7 @@
   <!-- start the body of your page -->
   <body style='margin : 0px; overflow: hidden;'>
     <!-- add some info at the top of the page -->
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; text-color: white;'>
       Instructions:<br/>
       Point your camera at the AR Code.
     </div>    
@@ -44,14 +44,18 @@
 
         <!-- Text -->
         <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-        <a-entity text="value: Hello World;"></a-entity>
+        <a-entity position='1 0.5 0' scale='5 5 5' text="value: Hello World;"></a-entity>
 
-        <!-- A Box -->
+        <!-- A Box -->        
         <a-box position='0 0.5 0' material='opacity: 0.5; side:double; color:red;'>
           <a-torus-knot radius='0.26' radius-tubular='0.05'>
             <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
           </a-torus-knot>
         </a-box>
+
+        <!-- Basic plane. -->
+        <!-- see: https://aframe.io/docs/0.8.0 -->
+        <a-plane color="#CCC" height="20" width="20"></a-plane>
 
       </a-anchor>
 
