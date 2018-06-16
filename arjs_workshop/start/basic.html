@@ -74,20 +74,15 @@
         console.log("helloWorldEntity == ", helloWorldEntity); 
 
         var myBox = document.getElementById('myBox');
-        myBox.addEventListener('loaded', function () {
-          console.log('myBox loaded');            
+        console.log("myBox == ", myBox);
+        setTimeout(function(){   
+          myBox.setAttribute('position', '0 1 0');
           console.log("myBox == ", myBox);
-
-          setTimeout(function(){   
-            myBox.setAttribute('position', '0 1 0');
-            console.log("myBox == ", myBox);
-          }, 3000);
-
-          setTimeout(function(){   
-            myBox.setAttribute('position', '0 1.5 0');
-            console.log("myBox == ", myBox);
-          }, 6000);
-        })
+        }, 3000);
+        setTimeout(function(){   
+          myBox.setAttribute('position', '0 1.5 0');
+          console.log("myBox == ", myBox);
+        }, 6000);
       
         //Timer for game
         setInterval(function()
