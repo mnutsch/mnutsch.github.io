@@ -23,6 +23,9 @@
       //wait until the page loads to perform the following
       window.onload = function () 
       {
+      
+        var intervalLength = 25; //determines the speed of the game
+
         //define the scene
         var scene = document.querySelector('a-scene');       
 
@@ -68,7 +71,7 @@
 
         scene.addEventListener('loaded', function () {
           console.log('scene loaded');  
-          var myBox = document.getElementById('mybox');
+          var myBox = document.getElementById('myBox');
           console.log("myBox == ", myBox);
 
           setTimeout(function(){   
