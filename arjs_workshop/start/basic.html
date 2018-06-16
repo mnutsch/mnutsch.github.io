@@ -67,7 +67,10 @@
           gameText.setAttribute('size', '5');
           gameText.setAttribute('material', 'opacity: 0');
           console.log("gameText == ", gameText);
-        });
+          gameText.flushToDOM();
+          scene.flushToDOM();
+          console.log("gameText == ", gameText);
+        });        
 
         var helloWorldPlane = document.getElementById('helloWorldPlane');
         var helloWorldEntity = document.getElementById('helloWorldEntity');
@@ -80,11 +83,15 @@
           //myBox.setAttribute('position', '0 1 0');
           myBox['position'] = '0 1 0';
           console.log("myBox == ", myBox);
+          myBox.flushToDOM();
+          scene.flushToDOM();
         }, 3000);
         setTimeout(function(){   
           //myBox.setAttribute('position', '0 1.5 0');
           myBox['position'] = '0 1.5 0';
           console.log("myBox == ", myBox);
+          myBox.flushToDOM();
+          scene.flushToDOM();
         }, 6000);
       
         //Timer for animations
