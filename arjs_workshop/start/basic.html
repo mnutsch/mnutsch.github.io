@@ -69,9 +69,9 @@
         console.log("helloWorldPlane == ", helloWorldPlane);
         console.log("helloWorldEntity == ", helloWorldEntity); 
 
-        scene.addEventListener('loaded', function () {
-          console.log('scene loaded');  
-          var myBox = document.getElementById('myBox');
+        var myBox = document.getElementById('myBox');
+        myBox.addEventListener('loaded', function () {
+          console.log('myBox loaded');            
           console.log("myBox == ", myBox);
 
           setTimeout(function(){   
