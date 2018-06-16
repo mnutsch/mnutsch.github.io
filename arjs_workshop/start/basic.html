@@ -73,14 +73,14 @@
         <!--<a-plane color="#CCC" height="1" width="1" rotation="-90 0 0"></a-plane>-->
 
         <!-- Text fit onto a plane -->
-        <a-entity
+        <a-plane
         geometry="primitive: plane; width: 1; height: auto"
-        material="color: blue"
-        text="value: Hello AR."></a-entity>
+        material="opacity: 0.5; color: green;"
+        text="value: 'Hello AR.'; align: center;"></a-plane>
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
-        <a-box position='5 0.5 0' material='opacity: 0.5; side:double; color:blue;'>          
+        <a-box position='5 0.5 0' depth="1" height="1" width="1" material='opacity: 0.5; side:double; color:blue;'>          
         </a-box>        
 
       </a-anchor>
