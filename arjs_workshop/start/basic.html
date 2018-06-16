@@ -10,6 +10,9 @@
     Notes:
     This code is based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
     It is also based in part on the AFrame documentation, available at: https://aframe.io/docs
+
+    Go to this URL to run this code in a mobile web browser: https://mnutsch.github.io/arjs_workshop/start/basic.html
+    Download and print this image for the AR target marker: https://github.com/mnutsch/mnutsch.github.io/raw/master/arjs_workshop/start/Hiro%20pattern%20with%20border.pdf
     -->
 
     <!-- include a-frame -->
@@ -60,7 +63,7 @@
         var topBumper = document.getElementById('topBumper');
         var bottomBumper = document.getElementById('bottomBumper');
 
-        //create variables to track position of objects
+        //initialize variables to track position of objects
         var myBoxPosition = {};
         myBoxPosition.x = 0;
         myBoxPosition.y = 0;
@@ -70,6 +73,11 @@
         mySpherePosition.x = 0;
         mySpherePosition.y = 0;
         mySpherePosition.z = 0;
+
+        var myTextPosition = {};
+        myTextPosition.x = 0;
+        myTextPosition.y = 0;
+        myTextPosition.z = 0;
 
         //create variables to track movement vectors      
         var mySphereVector = {};
@@ -116,14 +124,24 @@
           mySpherePosition.z = mySpherePosition.z + mySphereVector.z;
           mySphere.setAttribute('position', mySpherePosition.x + ' ' + mySpherePosition.y + ' ' + mySpherePosition.z);
           console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
+
+          //update the text
+          myText.setAttribute('text', 'value: ' + mySpherePosition.x + ", " + mySpherePosition.y + ", " + mySpherePosition.z); 
+          //move the text (anchored to the sphere's position)
+          myTextPosition.x = mySpherePosition.x + 0.10;
+          myTextPosition.y = mySpherePosition.y + 0.10;
+          myTextPosition.z = mySpherePosition.z + 0.10;
+          myText.setAttribute('position', myTextPosition.x + ' ' + myTextPosition.y + ' ' + myTextPosition.z);
           
-          //get the current date and time          
+          //get the current date and time   
+          /*       
           today = new Date();
           date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
           time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
           dateTime = date+' '+time;          
           //update the text entity's value to be this date and time
-          myText.setAttribute('text', 'value: ' + dateTime);          
+          myText.setAttribute('text', 'value: ' + dateTime);      
+          */    
 
           //detect collisions
           //if the object hits a boundary, then reverse it's vector
@@ -190,39 +208,34 @@
 
         <!-- Basic Text -->
         <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-        <!--<a-entity position='0 0 0' scale='5 5 5' color='red' text='value: Hello World;'></a-entity>-->
+        <a-entity id="myText" position='0 0 0' scale='1 1 1' color='red' text='value: Hello World;'></a-entity>
 
         <!-- Basic plane. -->
         <!-- see: https://aframe.io/docs/0.8.0 -->
         <!--<a-plane color="blue" height="1" width="1" rotation="-90 0 0"></a-plane>-->
 
         <!-- Text fit onto a plane -->
+        <!--
         <a-plane
         id = "helloWorldPlane"
         geometry="primitive: plane; width: 1; height: 1; height: auto"
         material="opacity: 0.5; color: white;"
         position='0 0.25 3'>
-          <a-entity id = "myText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
+          <a-entity id="helloText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
         </a-plane>
+        -->
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
-        <!--
-        <a-box id="myBox" position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.1; side:double; color:blue;'>          
-        </a-box>        
-        -->
-
         <a-box id="leftBumper" rotation="0 0 0" position='-1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
         <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
         <a-box id="rightBumper" rotation="0 180 0" position='1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:red;'></a-box>
         <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
 
-
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
         <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>
-      
-
+    
       </a-anchor>
 
       <!-- Define a static camera -->
