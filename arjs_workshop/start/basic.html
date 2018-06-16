@@ -24,44 +24,49 @@
       window.onload = function () 
       {
         //define the scene
-        var scene = document.querySelector('a-scene');
+        var scene = document.querySelector('a-scene');        
 
-        //add a sphere programatically
-        //https://stackoverflow.com/questions/38880104/how-to-use-javascript-with-a-frame
-        var gameBall = document.createElement('a-sphere');
-        var gameBallX = 0;
-        var gameBallY = 0.5;
-        var gameBallZ = 0;
-        var gameBallVelocityX = 0.05;
-        var gameBallVelocityY = 0.1;
-        var gameBallRadius = 0.15;        
-        scene.appendChild(gameBall); //add the sphere to the scene
-        gameBall.addEventListener('loaded', function () {
-          console.log('sphere attached');
-          gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
-          gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
-          console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
-          gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
-          console.log("gameBall == ", gameBall);
-        });
+        document.querySelector('a-scene').addEventListener('loaded', function () {
 
-        //add text programatically
-        var gameText = document.createElement('a-entity');        
-        scene.appendChild(gameText); //add the text to the scene
-        gameText.addEventListener('loaded', function () {
-          console.log('text attached');
-          gameText.setAttribute('mixin', 'red');
-          gameText.setAttribute('text', 'value: Game Text');
-          gameText.setAttribute('position', '0 1 0');
-          gameText.setAttribute('size', '5');
-          gameText.setAttribute('material', 'opacity: 0');
-          console.log("gameText == ", gameText);
-        });
-        
-        var helloWorldPlane = document.getElementById('helloWorldPlane');
-        var helloWorldEntity = document.getElementById('helloWorldEntity');
-        console.log("helloWorldPlane == ", helloWorldPlane);
-        console.log("helloWorldEntity == ", helloWorldEntity);
+          //add a sphere programatically
+          //https://stackoverflow.com/questions/38880104/how-to-use-javascript-with-a-frame
+          var gameBall = document.createElement('a-sphere');
+          var gameBallX = 0;
+          var gameBallY = 0.5;
+          var gameBallZ = 0;
+          var gameBallVelocityX = 0.05;
+          var gameBallVelocityY = 0.1;
+          var gameBallRadius = 0.15;        
+          scene.appendChild(gameBall); //add the sphere to the scene
+          gameBall.addEventListener('loaded', function () {
+            console.log('sphere attached');
+            gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
+            gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
+            console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
+            gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
+            console.log("gameBall == ", gameBall);
+          });
+
+          //add text programatically
+          var gameText = document.createElement('a-entity');        
+          scene.appendChild(gameText); //add the text to the scene
+          gameText.addEventListener('loaded', function () {
+            console.log('text attached');
+            gameText.setAttribute('mixin', 'red');
+            gameText.setAttribute('text', 'value: Game Text');
+            gameText.setAttribute('position', '0 1 0');
+            gameText.setAttribute('size', '5');
+            gameText.setAttribute('material', 'opacity: 0');
+            console.log("gameText == ", gameText);
+          });
+
+          var helloWorldPlane = document.getElementById('helloWorldPlane');
+          var helloWorldEntity = document.getElementById('helloWorldEntity');
+          console.log("helloWorldPlane == ", helloWorldPlane);
+          console.log("helloWorldEntity == ", helloWorldEntity);
+          
+        })
+      
 
       }
     </script>
