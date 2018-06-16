@@ -30,8 +30,8 @@
         //https://stackoverflow.com/questions/38880104/how-to-use-javascript-with-a-frame
         var gameBall = document.createElement('a-sphere');
         var gameBallX = 0;
-        var gameBallY = 1.25;
-        var gameBallZ = -1;
+        var gameBallY = 0.5;
+        var gameBallZ = 0;
         var gameBallVelocityX = 0.05;
         var gameBallVelocityY = 0.1;
         var gameBallRadius = 0.15;
@@ -47,9 +47,9 @@
         //add text programatically
         var gameText = document.createElement('a-entity');
         gameText.setAttribute('mixin', 'red');
-        gameText.setAttribute('text', 'text: Game Text');
-        gameText.setAttribute('position', '-1.8 2 0');
-        gameText.setAttribute('size', '0.75');
+        gameText.setAttribute('text', 'value: Game Text');
+        gameText.setAttribute('position', '0 1 0');
+        gameText.setAttribute('size', '5');
         gameText.setAttribute('material', 'opacity: 0');
         document.querySelector('a-scene').appendChild(gameText); //add the text to the scene
         gameText.addEventListener('loaded', function () {
@@ -93,8 +93,8 @@
         <!-- Text fit onto a plane -->
         <a-plane
         geometry="primitive: plane; width: 1; height: 1; height: auto"
-        material="opacity: 0.1; color: white;"
-        text="value: Hello AR.; align: center; opacity: 0.9; color: white;"></a-plane>
+        material="opacity: 0.9; color: white;"
+        text="value: Hello AR.; align: center; color: white;"></a-plane>
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
