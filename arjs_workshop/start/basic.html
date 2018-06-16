@@ -78,6 +78,12 @@
 
           //ADD CODE HERE TO DO THINGS...
 
+          //reset the colors of the bumpers
+          leftBumper.setAttribute('color', 'blue');
+          rightBumper.setAttribute('color', 'red');
+          bottomBumper.setAttribute('color', 'purple');
+          topBumper.setAttribute('color', 'green');
+
           //move the sphere
           mySpherePosition.x = mySpherePosition.x + mySphereVector.x;
           mySpherePosition.y = mySpherePosition.y + mySphereVector.y;
@@ -98,10 +104,12 @@
           if(mySpherePosition.x >= maxX){
             console.log("The ball bounced off the max X border.")
             mySphereVector.x = mySphereVector.x * -1;
+            rightBumper.setAttribute('color', 'yellow');
           }
           if(mySpherePosition.x <= minX){
             console.log("The ball bounced off the min X border.")
             mySphereVector.x = mySphereVector.x * -1;
+            leftBumper.setAttribute('color', 'yellow');
           }
           if(mySpherePosition.y >= maxY){
             console.log("The ball bounced off the max Y border.")
@@ -114,10 +122,12 @@
           if(mySpherePosition.z >= maxZ){
             console.log("The ball bounced off the max Z border.")
             mySphereVector.z = mySphereVector.z * -1;
+            bottomBumper.setAttribute('color', 'yellow');
           }
           if(mySpherePosition.z <= minZ){
             console.log("The ball bounced off the min Z border.")
             mySphereVector.z = mySphereVector.z * -1;
+            topBumper.setAttribute('color', 'yellow');
           }
               
         }, intervalLength);
