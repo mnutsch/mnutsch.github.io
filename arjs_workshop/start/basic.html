@@ -8,8 +8,8 @@
     Date: 6-16-2018
     Description: This is sample code for a workshop on developing an AR.js app.
     Notes:
-    This code is based largely on Jerome Etienne's examples at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
-
+    This code is based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
+    It is also based in part on the AFrame documentation, available at: https://aframe.io/docs
     -->
 
     <!-- include a-frame -->
@@ -98,6 +98,10 @@
         setInterval(function()
         {
           //ADD CODE HERE TO DO THINGS
+
+          //move the box up
+          myBox.setAttribute('position', '0 ' + (myBox.getAttribute('position').x + 0.01) + ' 0');
+          console.log("myBox.getAttribute('position').x == ", myBox.getAttribute('position').x);
           
           //get the current date and time
           /*
