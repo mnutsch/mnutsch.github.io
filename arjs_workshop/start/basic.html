@@ -42,6 +42,7 @@
         scene.appendChild(gameBall); //add the sphere to the scene
         gameBall.addEventListener('loaded', function () {
           console.log('sphere attached');
+          console.log("gameBall == ", gameBall);
         });
 
         //add text programatically
@@ -54,7 +55,9 @@
         scene.appendChild(gameText); //add the text to the scene
         gameText.addEventListener('loaded', function () {
           console.log('text attached');
+          console.log("gameText == ", gameText);
         });
+        
 
       }
     </script>
