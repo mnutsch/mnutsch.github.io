@@ -34,27 +34,27 @@
         var gameBallZ = 0;
         var gameBallVelocityX = 0.05;
         var gameBallVelocityY = 0.1;
-        var gameBallRadius = 0.15;
-        gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
-        gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
-        console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
-        gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
+        var gameBallRadius = 0.15;        
         scene.appendChild(gameBall); //add the sphere to the scene
         gameBall.addEventListener('loaded', function () {
           console.log('sphere attached');
+          gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
+          gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
+          console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
+          gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
           console.log("gameBall == ", gameBall);
         });
 
         //add text programatically
-        var gameText = document.createElement('a-entity');
-        gameText.setAttribute('mixin', 'red');
-        gameText.setAttribute('text', 'value: Game Text');
-        gameText.setAttribute('position', '0 1 0');
-        gameText.setAttribute('size', '5');
-        gameText.setAttribute('material', 'opacity: 0');
+        var gameText = document.createElement('a-entity');        
         scene.appendChild(gameText); //add the text to the scene
         gameText.addEventListener('loaded', function () {
           console.log('text attached');
+          gameText.setAttribute('mixin', 'red');
+          gameText.setAttribute('text', 'value: Game Text');
+          gameText.setAttribute('position', '0 1 0');
+          gameText.setAttribute('size', '5');
+          gameText.setAttribute('material', 'opacity: 0');
           console.log("gameText == ", gameText);
         });
         
@@ -87,11 +87,11 @@
 
         <!-- Basic Text -->
         <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-        <!--<a-entity position='0 0 0' scale='5 5 5' text="value: Hello World;"></a-entity>-->
+        <!--<a-entity position='0 0 0' scale='5 5 5' color='red' text='value: Hello World;'></a-entity>-->
 
         <!-- Basic plane. -->
         <!-- see: https://aframe.io/docs/0.8.0 -->
-        <!--<a-plane color="#CCC" height="1" width="1" rotation="-90 0 0"></a-plane>-->
+        <!--<a-plane color="blue" height="1" width="1" rotation="-90 0 0"></a-plane>-->
 
         <!-- Text fit onto a plane -->
         <a-plane
