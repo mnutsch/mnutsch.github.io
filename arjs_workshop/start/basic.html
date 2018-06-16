@@ -29,54 +29,19 @@
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         var dateTime = date+' '+time;
       
-        var intervalLength = 25; //determines the speed of the animation
+        var intervalLength = 200; //determines the speed of the animation (milliseconds to wait between ticks)
 
         //define the scene
         var scene = document.querySelector('a-scene');       
 
-        //add a sphere programatically
-        //https://stackoverflow.com/questions/38880104/how-to-use-javascript-with-a-frame
-        var gameBall = document.createElement('a-sphere');
-        var gameBallX = 0;
-        var gameBallY = 0.5;
-        var gameBallZ = 0;
-        var gameBallVelocityX = 0.05;
-        var gameBallVelocityY = 0.1;
-        var gameBallRadius = 0.15;        
-        scene.appendChild(gameBall); //add the sphere to the scene
-        gameBall.addEventListener('loaded', function () {
-          console.log('sphere loaded');
-          setTimeout(function(){
-            console.log('setting sphere attributes');
-            gameBall.setAttribute('color', '#EF2D5E'); //set the color of the sphere
-            gameBall.setAttribute('radius', gameBallRadius); //set the size of the sphere
-            console.log(gameBallX + ' ' + gameBallY + ' ' + gameBallZ);
-            gameBall.setAttribute('position', gameBallX + ' ' + gameBallY + ' ' + gameBallZ); //set the position of the sphere
-            console.log("gameBall == ", gameBall);
-          }, 3000);
-        });
-
-        //add text programatically
-        var gameText = document.createElement('a-entity');        
-        scene.appendChild(gameText); //add the text to the scene
-        gameText.addEventListener('loaded', function () {
-          console.log('text loaded');
-          gameText.setAttribute('mixin', 'red');
-          gameText.setAttribute('text', 'value: Game Text');
-          gameText.setAttribute('position', '0 1 0');
-          gameText.setAttribute('size', '5');
-          gameText.setAttribute('material', 'opacity: 0');
-          console.log("gameText == ", gameText);
-          scene.flushToDOM();
-          console.log("gameText == ", gameText);
-        });        
-
-        var helloWorldPlane = document.getElementById('helloWorldPlane');
-        var helloWorldEntity = document.getElementById('helloWorldEntity');
-        console.log("helloWorldPlane == ", helloWorldPlane);
-        console.log("helloWorldEntity == ", helloWorldEntity); 
-
+        var myBoxPosition = {};
+        myBoxPosition.x = 0;
+        myBoxPosition.y = 0;
+        myBoxPosition.z = 0;
         var myBox = document.getElementById('myBox');      
+        var myText = document.getElementById('myText');      
+
+        /*
         console.log("myBox == ", myBox);
         console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
         setTimeout(function(){   
@@ -93,6 +58,7 @@
           console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
           scene.flushToDOM();
         }, 6000);
+        */
       
         //Timer for animations
         setInterval(function()
@@ -100,19 +66,17 @@
           //ADD CODE HERE TO DO THINGS
 
           //move the box up
-          myBox.setAttribute('position', '0 ' + (myBox.getAttribute('position').x + 0.01) + ' 0');
+          myBoxPosition.y = myBoxPosition.y + 0.01;
+          myBox.setAttribute('position', myBoxPosition.x + ' ' + myBoxPosition.y + ' ' + myBoxPosition.z);
           console.log("myBox.getAttribute('position').x == ", myBox.getAttribute('position').x);
           
-          //get the current date and time
-          /*
+          //get the current date and time          
           today = new Date();
           date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
           time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          dateTime = date+' '+time;
-          console.log("The current time is: " + dateTime);
-          */
+          dateTime = date+' '+time;          
           //update the text entity's value to be this date and time
-          //DEV NOTE: add code here
+          myText.setAttribute('text', 'value: ' + dateTime);          
 
           //move the ball around
           //DEV NOTE: add code here
@@ -162,7 +126,7 @@
         geometry="primitive: plane; width: 1; height: 1; height: auto"
         material="opacity: 0.5; color: white;"
         position='0 0.25 0'>
-        <a-entity id = "helloWorldEntity" scale='1 1 1' text="value: Hello World;"></a-entity>
+        <a-entity id = "myText" scale='1 1 1' text="value: Hello World;"></a-entity>
         </a-plane>
 
         <!-- Basic Box -->             
