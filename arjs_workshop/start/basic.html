@@ -47,10 +47,11 @@
         var gameText = document.createElement('a-entity');
         gameText.setAttribute('mixin', 'red');
         scene.appendChild(gameText);
-        gameText.setAttribute('text', 'text: Game Over');
+        gameText.setAttribute('text', 'text: Game Text');
         gameText.setAttribute('position', '-1.8 2 0');
         gameText.setAttribute('size', '0.75');
         gameText.setAttribute('material', 'opacity: 0');
+        document.querySelector('a-scene').appendChild(gameText);
         gameText.addEventListener('loaded', function () {
           console.log('text attached');
         });
