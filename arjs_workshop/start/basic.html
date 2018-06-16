@@ -24,7 +24,7 @@
       window.onload = function () 
       {
 
-        var intervalLength = 25; //determines the speed of the animation (milliseconds to wait between ticks)
+        var intervalLength = 20; //determines the speed of the animation (milliseconds to wait between ticks)
 
         //define the scene, for ease of interacting with it
         var scene = document.querySelector('a-scene');       
@@ -38,12 +38,12 @@
         var dateTime = date+' '+time;
            
         //for tracking border collisions
-        var maxX = 1.5;
-        var maxY = 1.5;
-        var maxZ = 1.5;
-        var minX = -1.5;
-        var minY = -1.5;
-        var minZ = -1.5;
+        var maxX = 1;
+        var maxY = 1;
+        var maxZ = 1;
+        var minX = -1;
+        var minY = -1;
+        var minZ = -1;
 
         //bind varibles to entities
         var myBox = document.getElementById('myBox');      
@@ -61,11 +61,12 @@
         mySpherePosition.y = 0;
         mySpherePosition.z = 0;
 
-        //create variables to track movement vectors
+        //create variables to track movement vectors      
         var mySphereVector = {};
-        mySphereVector.x = 0.01;
         mySphereVector.y = 0;
-        mySphereVector.z = 0.004;
+        //pick a random number between 0.000 and 0.050 for both x and z vectors
+        mySphereVector.x = (Math.floor(Math.random() * 50) / 1000)
+        mySphereVector.z = (Math.floor(Math.random() * 50) / 1000)
       
         //Timer for animations
         setInterval(function()
