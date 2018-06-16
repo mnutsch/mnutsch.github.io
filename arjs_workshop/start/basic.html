@@ -45,6 +45,12 @@
         var minY = -1;
         var minZ = -1;
 
+        //for tracking border color cooldown
+        var topBumperCoolDown = 0;
+        var rightBumperCoolDown = 0;
+        var leftBumperCoolDown = 0;
+        var bottomBumperCoolDown = 0;
+
         //bind varibles to entities
         var myBox = document.getElementById('myBox');      
         var myText = document.getElementById('myText');      
@@ -79,10 +85,30 @@
           //ADD CODE HERE TO DO THINGS...
 
           //reset the colors of the bumpers
-          leftBumper.setAttribute('color', 'blue');
-          rightBumper.setAttribute('color', 'red');
-          bottomBumper.setAttribute('color', 'purple');
-          topBumper.setAttribute('color', 'green');
+          if(leftBumperCoolDown > 0){
+            leftBumperCoolDown = leftBumperCoolDown - 1;
+          }
+          else{
+            leftBumper.setAttribute('color', 'blue');
+          }
+          if(rightBumperCoolDown > 0){
+            rightBumperCoolDown = rightBumperCoolDown - 1;
+          }
+          else{
+            rightBumper.setAttribute('color', 'red');
+          }
+          if(bottomBumperCoolDown > 0){
+            bottomBumperCoolDown = bottomBumperCoolDown - 1;
+          }
+          else{
+            bottomBumper.setAttribute('color', 'purple');
+          }
+          if(topBumperCoolDown > 0){
+            topBumperCoolDown = topBumperCoolDown - 1;
+          }
+          else{
+            topBumper.setAttribute('color', 'green');
+          }
 
           //move the sphere
           mySpherePosition.x = mySpherePosition.x + mySphereVector.x;
@@ -105,11 +131,13 @@
             console.log("The ball bounced off the max X border.")
             mySphereVector.x = mySphereVector.x * -1;
             rightBumper.setAttribute('color', 'yellow');
+            rightBumperCoolDown = 10;
           }
           if(mySpherePosition.x <= minX){
             console.log("The ball bounced off the min X border.")
             mySphereVector.x = mySphereVector.x * -1;
             leftBumper.setAttribute('color', 'yellow');
+            leftBumperCoolDown = 10;
           }
           if(mySpherePosition.y >= maxY){
             console.log("The ball bounced off the max Y border.")
@@ -123,11 +151,13 @@
             console.log("The ball bounced off the max Z border.")
             mySphereVector.z = mySphereVector.z * -1;
             bottomBumper.setAttribute('color', 'yellow');
+            bottomBumperCoolDown = 10;
           }
           if(mySpherePosition.z <= minZ){
             console.log("The ball bounced off the min Z border.")
             mySphereVector.z = mySphereVector.z * -1;
             topBumper.setAttribute('color', 'yellow');
+            topBumperCoolDown = 10;
           }
               
         }, intervalLength);
