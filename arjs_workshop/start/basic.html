@@ -23,52 +23,62 @@
       //wait until the page loads to perform the following
       window.onload = function () 
       {
+
+        var intervalLength = 200; //determines the speed of the animation (milliseconds to wait between ticks)
+
+        //define the scene, for ease of interacting with it
+        var scene = document.querySelector('a-scene');       
+
+        //ADD JAVASCRIPT CODE HERE...
+
         //for keeping track of the date and time
         var today = new Date();
         var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         var dateTime = date+' '+time;
-      
-        var intervalLength = 200; //determines the speed of the animation (milliseconds to wait between ticks)
+           
+        //for tracking border collisions
+        var maxX = 1.5;
+        var maxY = 1.5;
+        var maxZ = 1.5;
+        var minX = 1.5;
+        var minY = 1.5;
+        var minZ = 1.5;
 
-        //define the scene
-        var scene = document.querySelector('a-scene');       
+        //bind varibles to entities
+        var myBox = document.getElementById('myBox');      
+        var myText = document.getElementById('myText');      
+        var mySphere = document.getElementById('mySphere');
 
+        //create variables to track position of objects
         var myBoxPosition = {};
         myBoxPosition.x = 0;
         myBoxPosition.y = 0;
         myBoxPosition.z = 0;
-        var myBox = document.getElementById('myBox');      
-        var myText = document.getElementById('myText');      
 
-        /*
-        console.log("myBox == ", myBox);
-        console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
-        setTimeout(function(){   
-          myBox.setAttribute('position', '0 1 0');
-          //myBox['position'] = '0 1 0';
-          console.log("myBox == ", myBox);
-          console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
-          scene.flushToDOM();
-        }, 3000);
-        setTimeout(function(){   
-          myBox.setAttribute('position', '0 1.5 0');
-          //myBox['position'] = '0 1.5 0';
-          console.log("myBox == ", myBox);
-          console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
-          scene.flushToDOM();
-        }, 6000);
-        */
+        var mySpherePosition = {};
+        mySpherePosition.x = 0;
+        mySpherePosition.y = 0;
+        mySpherePosition.z = 0;
+
+        //create variables to track movement vectors
+        var mySphereVector = {};
+        mySphereVector.x = 0.01;
+        mySphereVector.y = 0;
+        mySphereVector.z = 0.004;
       
         //Timer for animations
         setInterval(function()
         {
-          //ADD CODE HERE TO DO THINGS
 
-          //move the box up
-          myBoxPosition.y = myBoxPosition.y + 0.01;
-          myBox.setAttribute('position', myBoxPosition.x + ' ' + myBoxPosition.y + ' ' + myBoxPosition.z);
-          console.log("myBox.getAttribute('position') == ", myBox.getAttribute('position'));
+          //ADD CODE HERE TO DO THINGS...
+
+          //move the sphere
+          mySpherePosition.x = mySpherePosition.x + mySphereVector.x;
+          mySpherePosition.y = mySpherePosition.y + mySphereVector.y;
+          mySpherePosition.z = mySpherePosition.z + mySphereVector.z;
+          mySphere.setAttribute('position', mySpherePosition.x + ' ' + mySpherePosition.y + ' ' + mySpherePosition.z);
+          console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
           
           //get the current date and time          
           today = new Date();
@@ -78,11 +88,32 @@
           //update the text entity's value to be this date and time
           myText.setAttribute('text', 'value: ' + dateTime);          
 
-          //move the ball around
-          //DEV NOTE: add code here
-
           //detect collisions
-          //DEV NOTE: add code here
+          //if the object hits a boundary, then reverse it's vector
+          if(myBoxPosition.x >= maxX){
+            console.log("The ball bounced off the max X border.")
+            mySphereVector.x = mySphereVector.x * -1;
+          }
+          if(myBoxPosition.x <= minX){
+            console.log("The ball bounced off the min X border.")
+            mySphereVector.x = mySphereVector.x * -1;
+          }
+          if(myBoxPosition.y >= maxY){
+            console.log("The ball bounced off the max Y border.")
+            mySphereVector.y = mySphereVector.y * -1;
+          }
+          if(myBoxPosition.y <= minY){
+            console.log("The ball bounced off the min Y border.")
+            mySphereVector.y = mySphereVector.y * -1;
+          }
+          if(myBoxPosition.z >= maxZ){
+            console.log("The ball bounced off the max Z border.")
+            mySphereVector.z = mySphereVector.z * -1;
+          }
+          if(myBoxPosition.z <= minZ){
+            console.log("The ball bounced off the min Z border.")
+            mySphereVector.z = mySphereVector.z * -1;
+          }
               
         }, intervalLength);
 
@@ -104,13 +135,13 @@
 
       <!-- Declare assets for use in the scene. -->
       <a-assets timeout="1000">
-        <!-- declare assets here -->    
+        <!-- Declare assets here. These are things like images or 3D models. -->    
       </a-assets>
 
       <!-- Create a anchor to attach your augmented reality -->
       <a-anchor hit-testing-enabled='true'>
 
-        <!-- Add your static augmented reality items here -->
+        <!-- Add your augmented reality items here -->
 
         <!-- Basic Text -->
         <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
@@ -125,14 +156,18 @@
         id = "helloWorldPlane"
         geometry="primitive: plane; width: 1; height: 1; height: auto"
         material="opacity: 0.5; color: white;"
-        position='0 0.25 0'>
-        <a-entity id = "myText" scale='1 1 1' text="value: Hello World;"></a-entity>
+        position='0 0.25 -3'>
+          <a-entity id = "myText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
         </a-plane>
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
-        <a-box id="myBox" position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.5; side:double; color:blue;'>          
+        <a-box id="myBox" position='0 0.5 0' depth="1" height="1" width="1" material='opacity: 0.1; side:double; color:blue;'>          
         </a-box>        
+
+        <!-- Basic Sphere --> 
+        <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
+        <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.25"></a-sphere>
       
 
       </a-anchor>
