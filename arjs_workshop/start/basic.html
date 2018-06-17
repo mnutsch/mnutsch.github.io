@@ -54,10 +54,11 @@
         var leftBumperCoolDown = 0;
         var bottomBumperCoolDown = 0;
 
-        //bind varibles to entities
+        //bind variables to entities
         var myBox = document.getElementById('myBox');      
         var myText = document.getElementById('myText');      
         var mySphere = document.getElementById('mySphere');
+        var my3DModel = document.getElementById('my3DModel');
         var leftBumper = document.getElementById('leftBumper');
         var rightBumper = document.getElementById('rightBumper');
         var topBumper = document.getElementById('topBumper');
@@ -79,13 +80,30 @@
         myTextPosition.y = 0;
         myTextPosition.z = 0;
 
+        var my3DModelPosition = {};
+        my3DModelPosition.x = 0;
+        my3DModelPosition.y = 0;
+        my3DModelPosition.z = 0;
+
+        //initialize variables to track rotation of objects
+        var my3DModelRotation = {};
+        my3DModelRotation.x = 0;
+        my3DModelRotation.y = 0;
+        my3DModelRotation.z = 0;
+
         //create variables to track movement vectors      
         var mySphereVector = {};
         mySphereVector.y = 0;
         //pick a random number between 0.010 and 0.050 for both x and z vectors
         mySphereVector.x = ((Math.floor(Math.random() * 50) + 10) / 1000)
         mySphereVector.z = ((Math.floor(Math.random() * 50) + 10) / 1000)
-      
+        
+        var my3DModelVector = {};
+        my3DModelVector.y = 0;
+        //pick a random number between 0.010 and 0.020 for both x and z vectors
+        my3DModelVector.x = ((Math.floor(Math.random() * 20) + 10) / 1000)
+        my3DModelVector.z = ((Math.floor(Math.random() * 20) + 10) / 1000)
+
         //Timer for animations
         setInterval(function()
         {
@@ -132,6 +150,13 @@
           myTextPosition.y = mySpherePosition.y + 0.10;
           myTextPosition.z = mySpherePosition.z + 0.10;
           myText.setAttribute('position', myTextPosition.x + ' ' + myTextPosition.y + ' ' + myTextPosition.z);
+
+          //move the 3DModel
+          my3DModelPosition.x = my3DModelPosition.x + my3DModelVector.x;
+          my3DModelPosition.y = my3DModelPosition.y + my3DModelVector.y;
+          my3DModelPosition.z = my3DModelPosition.z + my3DModelVector.z;
+          my3DModel.setAttribute('position', my3DModelPosition.x + ' ' + my3DModelPosition.y + ' ' + my3DModelPosition.z);
+          console.log("my3DModel.getAttribute('position') == ", my3DModel.getAttribute('position'));
           
           //get the current date and time   
           /*       
@@ -144,7 +169,7 @@
           */    
 
           //detect collisions
-          //if the object hits a boundary, then reverse it's vector
+          //if the sphere hits a boundary, then reverse it's vector
           if(mySpherePosition.x >= maxX){
             console.log("The ball bounced off the max X border.")
             mySphereVector.x = mySphereVector.x * -1;
@@ -177,7 +202,17 @@
             topBumper.setAttribute('color', 'yellow');
             topBumperCoolDown = 10;
           }
-              
+
+          //set the rotation of the 3DModel based on it's vector
+          //first convert the vectors into a 360 degree angle
+          //source: https://stackoverflow.com/questions/35271222/getting-the-angle-from-a-direction-vector
+          var angle = Math.atan2(my3DModelVector.y, my3DModelVector.x);   //radians
+          var degrees = 180*angle/Math.PI;  //degrees
+          var newRotation = (360+Math.round(degrees))%360; //round number, avoid decimal fragments
+          my3DModelRotation.z = newRotation;
+          //set the rotation value
+          my3DModel.setAttribute('rotation', my3DModelRotation.x + ' ' + my3DModelRotation.y + ' ' + my3DModelRotation.z);
+          
         }, intervalLength);
 
       }
@@ -199,6 +234,11 @@
       <!-- Declare assets for use in the scene. -->
       <a-assets timeout="1000">
         <!-- Declare assets here. These are things like images or 3D models. -->    
+        
+        <!-- Rocket ship 3D model. -->
+        <!-- source: https://www.turbosquid.com/3d-models/free-obj-model-rocket/665662 -->
+        <a-asset-item id="rocket-obj" src="https://mnutsch.github.io/arjs_workshop/start/resources/rocket.obj"></a-asset-item preload="auto">
+      
       </a-assets>
 
       <!-- Create a anchor to attach your augmented reality -->
@@ -235,7 +275,11 @@
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
         <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>
-    
+
+        <!-- 3D Model -->
+        <!-- see: https://aframe.io/docs/0.8.0/primitives/a-obj-model.html -->
+        <a-obj-model id="my3DModel" src="rocket-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: green;"></a-obj-model>
+        
       </a-anchor>
 
       <!-- Define a static camera -->
