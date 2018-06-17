@@ -94,9 +94,9 @@
         //create variables to track movement vectors      
         var mySphereVector = {};
         mySphereVector.y = 0;
-        //pick a random number between 0.010 and 0.050 for both x and z vectors
-        mySphereVector.x = ((Math.floor(Math.random() * 50) + 10) / 1000)
-        mySphereVector.z = ((Math.floor(Math.random() * 50) + 10) / 1000)
+        //pick a random number between 0.010 and 0.030 for both x and z vectors
+        mySphereVector.x = ((Math.floor(Math.random() * 30) + 10) / 1000)
+        mySphereVector.z = ((Math.floor(Math.random() * 30) + 10) / 1000)
         
         var my3DModelVector = {};
         my3DModelVector.y = 0;
@@ -146,10 +146,12 @@
           //update the text
           myText.setAttribute('text', 'value: ' + mySpherePosition.x + ", " + mySpherePosition.y + ", " + mySpherePosition.z); 
           //move the text (anchored to the sphere's position)
+          /*
           myTextPosition.x = mySpherePosition.x + 0.10;
           myTextPosition.y = mySpherePosition.y + 0.10;
           myTextPosition.z = mySpherePosition.z + 0.10;
           myText.setAttribute('position', myTextPosition.x + ' ' + myTextPosition.y + ' ' + myTextPosition.z);
+          *.
 
           //move the 3DModel
           /*
@@ -239,7 +241,7 @@
         
         <!-- Rocket ship 3D model. -->
         <!-- source: https://www.turbosquid.com/3d-models/free-obj-model-rocket/665662 -->
-        <a-asset-item id="rocket-obj" src="https://mnutsch.github.io/arjs_workshop/start/resources/rocket.obj"></a-asset-item preload="auto">
+        <a-asset-item id="rocket-obj" src="rocket.obj"></a-asset-item preload="auto">
       
       </a-assets>
 
