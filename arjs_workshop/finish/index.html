@@ -85,12 +85,6 @@
         my3DModelPosition.y = 0;
         my3DModelPosition.z = 0;
 
-        //initialize variables to track rotation of objects
-        var my3DModelRotation = {};
-        my3DModelRotation.x = 0;
-        my3DModelRotation.y = 0;
-        my3DModelRotation.z = 0;
-
         //create variables to track movement vectors      
         var mySphereVector = {};
         mySphereVector.y = 0;
@@ -98,12 +92,6 @@
         mySphereVector.x = ((Math.floor(Math.random() * 30) + 20) / 1000)
         mySphereVector.z = ((Math.floor(Math.random() * 30) + 20) / 1000)
         
-        var my3DModelVector = {};
-        my3DModelVector.y = 0;
-        //pick a random number between 0.010 and 0.020 for both x and z vectors
-        my3DModelVector.x = ((Math.floor(Math.random() * 20) + 10) / 1000)
-        my3DModelVector.z = ((Math.floor(Math.random() * 20) + 10) / 1000)
-
         //Timer for animations
         setInterval(function()
         {
@@ -144,33 +132,7 @@
           console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
 
           //update the text
-          myText.setAttribute('text', 'value: ' + mySpherePosition.x + ", " + mySpherePosition.y + ", " + mySpherePosition.z); 
-          //move the text (anchored to the sphere's position)
-          /*
-          myTextPosition.x = mySpherePosition.x + 0.10;
-          myTextPosition.y = mySpherePosition.y + 0.10;
-          myTextPosition.z = mySpherePosition.z + 0.10;
-          myText.setAttribute('position', myTextPosition.x + ' ' + myTextPosition.y + ' ' + myTextPosition.z);
-          *.
-
-          //move the 3DModel
-          /*
-          my3DModelPosition.x = my3DModelPosition.x + my3DModelVector.x;
-          my3DModelPosition.y = my3DModelPosition.y + my3DModelVector.y;
-          my3DModelPosition.z = my3DModelPosition.z + my3DModelVector.z;
-          my3DModel.setAttribute('position', my3DModelPosition.x + ' ' + my3DModelPosition.y + ' ' + my3DModelPosition.z);
-          console.log("my3DModel.getAttribute('position') == ", my3DModel.getAttribute('position'));
-          */
-          
-          //get the current date and time   
-          /*       
-          today = new Date();
-          date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-          time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-          dateTime = date+' '+time;          
-          //update the text entity's value to be this date and time
-          myText.setAttribute('text', 'value: ' + dateTime);      
-          */    
+          myText.setAttribute('text', 'value: Ball Location: X = ' + mySpherePosition.x + ", Y = " + mySpherePosition.y + ", Z = " + mySpherePosition.z); 
 
           //detect collisions
           //if the sphere hits a boundary, then reverse it's vector
@@ -206,16 +168,6 @@
             topBumper.setAttribute('color', 'yellow');
             topBumperCoolDown = 10;
           }
-
-          //set the rotation of the 3DModel based on it's vector
-          //first convert the vectors into a 360 degree angle
-          //source: https://stackoverflow.com/questions/35271222/getting-the-angle-from-a-direction-vector
-          var angle = Math.atan2(my3DModelVector.y, my3DModelVector.x);   //radians
-          var degrees = 180*angle/Math.PI;  //degrees
-          var newRotation = (360+Math.round(degrees))%360; //round number, avoid decimal fragments
-          my3DModelRotation.z = newRotation;
-          //set the rotation value
-          my3DModel.setAttribute('rotation', my3DModelRotation.x + ' ' + my3DModelRotation.y + ' ' + my3DModelRotation.z);
           
         }, intervalLength);
 
@@ -226,6 +178,7 @@
 
   <!-- start the body of your page -->
   <body style='margin : 0px; overflow: hidden;'>
+
     <!-- add some info at the top of the page -->
     <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
       Instructions:<br/>
@@ -239,9 +192,8 @@
       <a-assets timeout="1000">
         <!-- Declare assets here. These are things like images or 3D models. -->    
         
-        <!-- Rocket ship 3D model. -->
-        <!-- source: https://www.turbosquid.com/3d-models/free-obj-model-rocket/665662 -->
-        <a-asset-item id="rocket-obj" src="rocket.obj"></a-asset-item preload="auto">
+        <!-- Example of how to declare a 3D model asset. -->
+        <a-asset-item id="3DModel-obj" src="3Dmodel.obj"></a-asset-item preload="auto">
       
       </a-assets>
 
@@ -250,22 +202,22 @@
 
         <!-- Add your augmented reality items here -->
 
-        <!-- Basic Text -->
+        <!-- example of basic text in 3D -->
         <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-        <a-entity id="myText" position='0 0 0' scale='1 1 1' color='red' text='value: Hello World;'></a-entity>
+        <!--<a-entity id="basicText" position='0 0 0' scale='1 1 1' color='red' text='value: Hello World;'></a-entity>-->
 
-        <!-- Basic plane. -->
+        <!-- example of a basic plane. -->
         <!-- see: https://aframe.io/docs/0.8.0 -->
         <!--<a-plane color="blue" height="1" width="1" rotation="-90 0 0"></a-plane>-->
 
-        <!-- Text fit onto a plane -->
+        <!-- example of text fit onto a plane -->
         <!--
         <a-plane
         id = "helloWorldPlane"
         geometry="primitive: plane; width: 1; height: 1; height: auto"
         material="opacity: 0.5; color: white;"
         position='0 0.25 3'>
-          <a-entity id="helloText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
+          <a-entity id="planeText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
         </a-plane>
         -->
 
@@ -280,9 +232,9 @@
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
         <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>
 
-        <!-- 3D Model -->
+        <!-- 3D Model example -->
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-obj-model.html -->
-        <a-obj-model id="my3DModel" src="rocket-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model>
+        <!--<a-obj-model id="my3DModel" src="rocket-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model>-->
         
       </a-anchor>
 
@@ -291,6 +243,10 @@
 
     </a-scene>
 
+    <!-- add some info at the bottom of the page -->
+    <div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
+      <span id="myText">Ball coordinates will appear here.</span>
+    </div>   
 
   </body>
 
