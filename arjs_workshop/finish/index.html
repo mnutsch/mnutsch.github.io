@@ -126,7 +126,8 @@
           console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
 
           //update the text
-          myText.setAttribute('text', 'value: Ball Location: X = ' + mySpherePosition.x + ", Y = " + mySpherePosition.y + ", Z = " + mySpherePosition.z); 
+          myText.setAttribute('text', 'value: Ball Location: X = ' + mySpherePosition.x + ", Y = " + mySpherePosition.y + ", Z = " + mySpherePosition.z);
+          myText.flushToDOM(); // Tell AFrame to update this HTML element. (AFrame will prevent updates otherwise.)
 
           //detect collisions
           //if the sphere hits a boundary, then reverse it's vector
@@ -180,7 +181,7 @@
     </div>    
 
     <!-- Define your 3d scene and enabled ar.js -->
-    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+    <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
 
       <!-- Declare assets for use in the scene. -->
       <a-assets timeout="1000">
