@@ -1,4 +1,4 @@
-<h1>Augmented Reality with AR.js</h1>
+<h1>Quick Start: Augmented Reality with AR.js</h1>
 
 Author: Matt Nutsch - @mnutsch - http://www.mattnutsch.com
 
