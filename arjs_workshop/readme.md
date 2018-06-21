@@ -1,4 +1,4 @@
-Augmented Reality with AR.js 
+<h1>Augmented Reality with AR.js</h1>
 
 Author: Matt Nutsch - @mnutsch - http://www.mattnutsch.com
 
@@ -7,9 +7,11 @@ Date: 6-20-2018
 Description:
 
 This is a quick start for making target based augmented reality using AFrame.js and AR.js.
+I put all of the dependencies into a single folder.
 
+<hr>
 
-Instructions:
+<strong>Instructions:</strong>
 
 *Step 1: Download or Clone the code from this repository.
 
@@ -26,3 +28,15 @@ Instructions:
 *Step 7: Add JavaScript to power complex animations or other interactivity.
 
 *Step 8: Enjoy!
+
+<hr>
+
+More things for you to try:
+
+*Create an AR Code, so that users can start your augmented reality app with a QR code scanner. (https://webxr.io/arcode-generator/)
+
+*Incorporate custom 3D models into your app. (Either search for "obj" file or create a file with a 3D graphics editing program.)
+
+*Create a custom target marker. (https://medium.com/arjs/how-to-create-your-own-marker-44becbec1105)
+
+
