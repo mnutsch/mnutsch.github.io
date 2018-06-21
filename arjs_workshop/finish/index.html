@@ -126,7 +126,7 @@
           console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
 
           //update the text of the <span>
-          myText.textContent = 'Ball Location: X = ' + mySpherePosition.x + ", Y = " + mySpherePosition.y + ", Z = " + mySpherePosition.z;
+          myText.textContent = 'Ball Location: X = ' + mySpherePosition.x.toFixed(2) + ", Y = " + mySpherePosition.y.toFixed(2) + ", Z = " + mySpherePosition.z.toFixed(2);
           
           //detect collisions
           //if the sphere hits a boundary, then reverse it's vector
@@ -241,9 +241,9 @@
 
     </a-scene>
 
-    <!-- add some info at the bottom of the page -->
-    <div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
-      <span id="myText">Ball coordinates will appear here.</span>
+    <!-- add some info at the bottom left of the page -->
+    <div >
+      <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px;'>Ball coordinates will appear here.</span>
     </div>   
 
   </body>
