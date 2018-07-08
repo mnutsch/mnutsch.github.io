@@ -22,18 +22,21 @@
     <script>ARjs.Context.baseURL = 'https://mnutsch.github.io/arjs_workshop/start/vendor/three.js/'</script>
     <!-- Note: the above libraries are included with absolute URL's, because Github.io seems to prefer those. Change them to relative URL's -->
 
-    <script>		
+    <script>	
+      
       //wait until the page loads to perform the following
       window.onload = function () 
       {
-        
+    
+        //add cameras to the select input as options
         function gotDevices(mediaDevices) {
           
           console.log("gotDevices ran!");
 
-          //select.innerHTML = '';
-          //select.appendChild(document.createElement('option'));
-          let count = 1;
+          //bind an object to the select input
+          var select = document.getElementById("videoSelect");
+
+          //iterate through the mediaDevices and add cameras to the select box
           mediaDevices.forEach(mediaDevice => {
             
             if (mediaDevice.kind === 'videoinput') {
@@ -42,17 +45,9 @@
               var option = document.createElement("option");
               option.text = mediaDevice.label || `Camera ${count}`;
               option.value = mediaDevice.deviceId;
-              var select = document.getElementById("videoSelect");
+              
               select.appendChild(option);
             
-              /*
-              const option = document.createElement('option');
-              option.value = mediaDevice.deviceId;
-              const label = mediaDevice.label || `Camera ${count  }`;
-              const textNode = document.createTextNode(label);
-              option.appendChild(textNode);
-              select.appendChild(option);
-              */
             }
             
           });
@@ -61,6 +56,59 @@
         navigator.mediaDevices.enumerateDevices().then(gotDevices);
 
       }
+
+      let currentStream;
+      
+      //stop any media streams
+      //source: https://www.twilio.com/blog/2018/04/choosing-cameras-javascript-mediadevices-api.html
+      function stopMediaTracks(stream) {
+        stream.getTracks().forEach(track => {
+          track.stop();
+        });
+      }
+
+      //change the camera 
+      //some of this code is based on the example at https://www.twilio.com/blog/2018/04/choosing-cameras-javascript-mediadevices-api.html
+      function changeCamera(){
+
+        console.log("changeCamera ran!");
+
+        //bind an object to the select input
+        var select = document.getElementById("videoSelect");
+
+        //bind an object to the video
+        var video = document.getElementsByTagName("video")[0];
+
+        //stop the media stream
+        if (typeof currentStream !== 'undefined') {
+          stopMediaTracks(currentStream);
+        }
+        const videoConstraints = {};
+        if (select.value === '') {
+          videoConstraints.facingMode = 'environment';
+        } else {
+          videoConstraints.deviceId = { exact: select.value };
+        }
+        const constraints = {
+          video: videoConstraints,
+          audio: false
+        };
+      
+        //change the video stream to the selected camera
+        navigator.mediaDevices
+          .getUserMedia(constraints)
+          .then(stream => {
+            currentStream = stream;
+            console.log("video == ", video);
+            video.srcObject = stream;
+            return navigator.mediaDevices.enumerateDevices();
+          })
+          //.then(gotDevices)
+          .catch(error => {
+            console.error(error);
+          });  
+      }
+
     </script>
 
   </head>
@@ -69,7 +117,9 @@
   <body style='margin : 0px; overflow: hidden;'>
     <!-- add some info at the top of the page -->
     <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
-      <select id = "videoSelect"></select>
+      <select id="videoSelect" onchange="changeCamera()">
+          <option value="">Choose a camera</option>
+      </select>
     </div>    
 
     <!-- Define your 3d scene and enabled ar.js -->
