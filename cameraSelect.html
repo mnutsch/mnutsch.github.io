@@ -91,7 +91,7 @@
           }
           input.hidden = false;
         })
-        .catch(error => ChromeSamples.log('Argh!', error.name || error));
+        .catch(error => console.log('Argh!', error.name || error));
         
         /* utility function to pause momentarily */
         function sleep(ms = 0) {
