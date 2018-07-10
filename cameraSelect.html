@@ -57,9 +57,10 @@
 
         /* This code adds a slide to adjust the zoom level.
         source:  */
-        /*
         navigator.mediaDevices.getUserMedia({video: true})
         .then(async mediaStream => {
+
+          console.log("adding slide input for zoom.")
           document.querySelector('video').srcObject = mediaStream;
 
           // Once crbug.com/711524 is fixed, we won't need to wait anymore. This is
@@ -72,13 +73,14 @@
           const capabilities = track.getCapabilities();
           const settings = track.getSettings();
 
+          //bind an object to the slide input
           const input = document.querySelector('input[type="range"]');
 
           // Check whether zoom is supported or not.
           if (!('zoom' in capabilities)) {
+            alert("camera zoom is not supported by " + track.label);
             return Promise.reject('Zoom is not supported by ' + track.label);
           }
-
           // Map zoom to a slider element.
           input.min = capabilities.zoom.min;
           input.max = capabilities.zoom.max;
@@ -90,13 +92,11 @@
           input.hidden = false;
         })
         .catch(error => ChromeSamples.log('Argh!', error.name || error));
-        */
+        
         /* utility function to pause momentarily */
-        /*
         function sleep(ms = 0) {
           return new Promise(r => setTimeout(r, ms));
         }
-        */
 
       }
 
@@ -191,11 +191,9 @@
     </a-scene>
 
     <!-- add a zoom slider at the bottom of the page -->
-    <!--
     <div style='z-index: 1; position: fixed;  width:100%; text-align: center; bottom: 10px;'>
       <input type="range" hidden>
-    </div>
-    -->   
+    </div>   
 
   </body>
 
