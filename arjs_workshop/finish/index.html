@@ -63,6 +63,8 @@
         var rightBumper = document.getElementById('rightBumper');
         var topBumper = document.getElementById('topBumper');
         var bottomBumper = document.getElementById('bottomBumper');
+        var topPaddle = document.getElementById('topPaddle');
+        var bottomPaddle = document.getElementById('bottomPaddle');
 
         //initialize variables to track position of objects
         var myBoxPosition = {};
@@ -104,19 +106,19 @@
             rightBumperCoolDown = rightBumperCoolDown - 1;
           }
           else{
-            rightBumper.setAttribute('color', 'red');
+            rightBumper.setAttribute('color', 'blue');
           }
           if(bottomBumperCoolDown > 0){
             bottomBumperCoolDown = bottomBumperCoolDown - 1;
           }
           else{
-            bottomBumper.setAttribute('color', 'purple');
+            bottomBumper.setAttribute('color', 'green');
           }
           if(topBumperCoolDown > 0){
             topBumperCoolDown = topBumperCoolDown - 1;
           }
           else{
-            topBumper.setAttribute('color', 'green');
+            topBumper.setAttribute('color', 'purple');
           }
 
           //move the sphere
@@ -233,8 +235,8 @@
         <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
         <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
         <!-- Paddles -->
-        <a-box id="player1Paddle" rotation="0 90 0" position='0 0.05 -0.8' depth="0.50" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
-        <a-box id="player2Paddle" rotation="0 270 0" position='0 0.05 0.8' depth="0.50" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
+        <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.8' depth="0.50" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
+        <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.8' depth="0.50" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
 
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
