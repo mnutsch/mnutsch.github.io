@@ -5,11 +5,12 @@
     <!--
     AR.js workshop
     Author: Matt Nutsch
-    Date: 6-20-2018
+    Date Created: 6-20-2018
+    Date Last Edited: 8-11-2018
     Description: This is sample code for a workshop on developing an AR.js app.
     Notes:
-    This code is based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
-    It is also based in part on the AFrame documentation, available at: https://aframe.io/docs
+    The implementations of AR.js are based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
+    The implementations of AFrame.js are also based in part on the AFrame documentation, available at: https://aframe.io/docs
 
     Go to this URL to run this code in a mobile web browser: https://mnutsch.github.io/arjs_workshop/start/index.html
     Download and print this image for the AR target marker: https://github.com/mnutsch/mnutsch.github.io/raw/master/arjs_workshop/start/Hiro%20pattern%20with%20border.pdf
@@ -39,7 +40,7 @@
         var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         var dateTime = date+' '+time;
-           
+        
         //for tracking border collisions
         var maxX = 1;
         var maxY = 1;
@@ -219,10 +220,14 @@
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
+        <!-- Bumpers -->
         <a-box id="leftBumper" rotation="0 0 0" position='-1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
         <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
         <a-box id="rightBumper" rotation="0 180 0" position='1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:red;'></a-box>
         <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
+        <!-- Paddles -->
+        <a-box id="player1Paddle" rotation="0 0 0" position='-0.8 0.05 0' depth="0.50" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
+        <a-box id="player2Paddle" rotation="0 180 0" position='0.8 0.05 0' depth="0.50" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:red;'></a-box>
 
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
