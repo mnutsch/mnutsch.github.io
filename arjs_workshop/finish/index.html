@@ -208,15 +208,22 @@
         <!--<a-plane color="blue" height="1" width="1" rotation="-90 0 0"></a-plane>-->
 
         <!-- example of text fit onto a plane -->
-        <!--
         <a-plane
-        id = "helloWorldPlane"
+        id = "player1Label"
         geometry="primitive: plane; width: 1; height: 1; height: auto"
-        material="opacity: 0.5; color: white;"
-        position='0 0.25 3'>
-          <a-entity id="planeText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
+        material="opacity: 0.5; color: white;" 
+        rotation="0 90 0" 
+        position='0 0.05 1.2'>
+          <a-entity id="planeText" scale='2 2 2' text="value: Player 1;" align-"center"></a-entity>
         </a-plane>
-        -->
+        <a-plane
+        id = "player2Label"
+        geometry="primitive: plane; width: 1; height: 1; height: auto"
+        material="opacity: 0.5; color: white;" 
+        rotation="0 90 0" 
+        position='0 0.05 -1.2'>
+          <a-entity id="planeText" scale='2 2 2' text="value: Player 2 (Computer);" align-"center"></a-entity>
+        </a-plane>
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
