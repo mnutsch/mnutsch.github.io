@@ -195,14 +195,14 @@
             && ((mySpherePosition.x + mySphereProperties.radius) < (topPaddlePosition.x + (topPaddleProperties.width / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) > (topPaddlePosition.y - (topPaddleProperties.height / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) < (topPaddlePosition.y + (topPaddleProperties.height / 2)))){
-            mySphereVector.x = mySphereVector.x * -1;
+            mySphereVector.z = mySphereVector.z * -1;
           } 
           //bottom paddle
           if(((mySpherePosition.x + mySphereProperties.radius) > (bottomPaddlePosition.x - (bottomPaddlePosition.width / 2)))
             && ((mySpherePosition.x + mySphereProperties.radius) < (bottomPaddlePosition.x + (bottomPaddlePosition.width / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) > (bottomPaddlePosition.y - (bottomPaddlePosition.height / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) < (bottomPaddlePosition.y + (bottomPaddlePosition.height / 2)))){
-            mySphereVector.x = mySphereVector.x * -1;
+            mySphereVector.z = mySphereVector.z * -1;
           } 
           
         }, intervalLength);
