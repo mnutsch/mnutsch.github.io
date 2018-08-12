@@ -33,8 +33,6 @@
         //define the scene, for ease of interacting with it
         var scene = document.querySelector('a-scene');       
 
-        //ADD JAVASCRIPT CODE HERE...
-
         //for keeping track of the date and time
         var today = new Date();
         var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -119,8 +117,6 @@
         //Timer for animations
         setInterval(function()
         {
-
-          //ADD CODE HERE TO DO THINGS...
 
           //reset the colors of the bumpers
           if(leftBumperCoolDown > 0){
@@ -232,6 +228,19 @@
             bottomPaddle.setAttribute('color', 'yellow');
             bottomPaddleCoolDown = 10;
           } 
+          //if the paddle reaches the edge then reset it's location
+          if((topPaddlePosition.x - (topPaddleProperties.depth / 2)) < minX){
+            topPaddlePosition.x = minX + (topPaddleProperties.depth / 2);
+          }
+          if((topPaddlePosition.x + (topPaddleProperties.depth / 2)) > maxX){
+            topPaddlePosition.x = maX - (topPaddleProperties.depth / 2);
+          }
+          if((bottomPaddlePosition.x - (bottomPaddleProperties.depth / 2)) < minX){
+            bottomPaddlePosition.x = minX + (bottomPaddleProperties.depth / 2);
+          }
+          if((bottomPaddlePosition.x + (bottomPaddleProperties.depth / 2)) > maxX){
+            bottomPaddlePosition.x = maX - (bottomPaddleProperties.depth / 2);
+          }
 
         }, intervalLength);
 
@@ -322,12 +331,12 @@
 
     <!-- add a button at the left of the page -->
     <div style='z-index: 1; position: fixed; left: 50px; bottom: 40px;'>
-      <button id="leftButton">Left</button>
+      <button id="leftButton" onclick="bottomPaddleVector = -0.1;">Left</button>
     </div>
 
     <!-- add a button at the right of the page -->
     <div style='z-index: 1; position: fixed; right: 50px; bottom: 40px;'>
-      <button id="rightButton">Right</button>
+      <button id="rightButton" onclick="bottomPaddleVector = 0.1;">Right</button>
     </div>
 
   </body>
