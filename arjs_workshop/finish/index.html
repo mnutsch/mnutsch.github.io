@@ -212,8 +212,8 @@
           if(
             ((mySpherePosition.x) > (topPaddlePosition.x + mySphereProperties.radius - (topPaddleProperties.depth / 2)))
             && ((mySpherePosition.x + mySphereProperties.radius) < (topPaddlePosition.x + (topPaddleProperties.depth / 2)))
-            && ((mySpherePosition.y + mySphereProperties.radius) > (topPaddlePosition.y - (topPaddleProperties.height / 2)))
-            && ((mySpherePosition.y + mySphereProperties.radius) < (topPaddlePosition.y + (topPaddleProperties.height / 2)))
+            && ((mySpherePosition.z + mySphereProperties.radius) > (topPaddlePosition.z - (topPaddleProperties.height / 2)))
+            && ((mySpherePosition.z + mySphereProperties.radius) < (topPaddlePosition.z + (topPaddleProperties.height / 2)))
             ){
             console.log("The ball bounced off the top paddle.")
             mySphereVector.z = mySphereVector.z * -1;
@@ -221,17 +221,17 @@
             topPaddleCoolDown = 10;
           } 
           //bottom paddle
-          /*
-          if(((mySpherePosition.x + mySphereProperties.radius) > (bottomPaddlePosition.x - (bottomPaddlePosition.width / 2)))
-            && ((mySpherePosition.x + mySphereProperties.radius) < (bottomPaddlePosition.x + (bottomPaddlePosition.width / 2)))
-            && ((mySpherePosition.y + mySphereProperties.radius) > (bottomPaddlePosition.y - (bottomPaddlePosition.height / 2)))
-            && ((mySpherePosition.y + mySphereProperties.radius) < (bottomPaddlePosition.y + (bottomPaddlePosition.height / 2)))){
+          if(
+            ((mySpherePosition.x) > (bottomPaddlePosition.x + mySphereProperties.radius - (bottomPaddleProperties.depth / 2)))
+            && ((mySpherePosition.x + mySphereProperties.radius) < (bottomPaddlePosition.x + (bottomPaddleProperties.depth / 2)))
+            && ((mySpherePosition.z + mySphereProperties.radius) > (bottomPaddlePosition.z - (bottomPaddleProperties.height / 2)))
+            && ((mySpherePosition.z + mySphereProperties.radius) < (bottomPaddlePosition.z + (bottomPaddleProperties.height / 2)))
+            ){
             console.log("The ball bounced off the bottom paddle.")
             mySphereVector.z = mySphereVector.z * -1;
             bottomPaddle.setAttribute('color', 'yellow');
             bottomPaddleCoolDown = 10;
           } 
-          */
           
         }, intervalLength);
 
