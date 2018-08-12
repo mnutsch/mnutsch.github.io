@@ -28,7 +28,7 @@
       window.onload = function () 
       {
 
-        var intervalLength = 60; //determines the speed of the animation (milliseconds to wait between ticks)
+        var intervalLength = 20; //determines the speed of the animation (milliseconds to wait between ticks)
 
         //define the scene, for ease of interacting with it
         var scene = document.querySelector('a-scene');       
@@ -324,8 +324,8 @@
 
     </a-scene>
 
-    <!-- add some info at the bottom left of the page -->
-    <div>
+    <!-- add some info at the bottom of the page -->
+    <div style="text-align: center;">
       <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px; background-color: #444444;'>Ball coordinates will appear here.</span>
     </div>
 
