@@ -28,7 +28,7 @@
       window.onload = function () 
       {
 
-        var intervalLength = 20; //determines the speed of the animation (milliseconds to wait between ticks)
+        var intervalLength = 60; //determines the speed of the animation (milliseconds to wait between ticks)
 
         //define the scene, for ease of interacting with it
         var scene = document.querySelector('a-scene');       
@@ -54,6 +54,8 @@
         var rightBumperCoolDown = 0;
         var leftBumperCoolDown = 0;
         var bottomBumperCoolDown = 0;
+        var topPaddleCoolDown = 0;
+        vat bottomPaddleCoolDown = 0;
 
         //bind variables to entities
         var myBox = document.getElementById('myBox');      
@@ -82,11 +84,11 @@
         var topPaddlePosition = {};
           topPaddlePosition.x = 0;
           topPaddlePosition.y = 0.05;
-          topPaddlePosition.z = -0.8;
+          topPaddlePosition.z = -0.9;
         var bottomPaddlePosition = {};
           bottomPaddlePosition.x = 0;
           bottomPaddlePosition.y = 0.05;
-          bottomPaddlePosition.z = 0.8;
+          bottomPaddlePosition.z = 0.9;
 
         //initialize variables to track object properties
         var topPaddleProperties = {};
@@ -132,17 +134,31 @@
           else{
             rightBumper.setAttribute('color', 'blue');
           }
+          
+          if(topBumperCoolDown > 0){
+            topBumperCoolDown = topBumperCoolDown - 1;
+          }
+          else{
+            topBumper.setAttribute('color', 'purple');
+          }
           if(bottomBumperCoolDown > 0){
             bottomBumperCoolDown = bottomBumperCoolDown - 1;
           }
           else{
             bottomBumper.setAttribute('color', 'green');
           }
-          if(topBumperCoolDown > 0){
-            topBumperCoolDown = topBumperCoolDown - 1;
+          
+          if(topPaddleCoolDown > 0){
+            topPaddleCoolDown = topPaddleCoolDown - 1;
           }
           else{
-            topBumper.setAttribute('color', 'purple');
+            topPaddle.setAttribute('color', 'purple');
+          }
+          if(bottomPaddleCoolDown > 0){
+            bottomPaddleCoolDown = bottomPaddleCoolDown - 1;
+          }
+          else{
+            bottomPaddle.setAttribute('color', 'green');
           }
 
           //move the sphere
@@ -195,14 +211,20 @@
             && ((mySpherePosition.x + mySphereProperties.radius) < (topPaddlePosition.x + (topPaddleProperties.width / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) > (topPaddlePosition.y - (topPaddleProperties.height / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) < (topPaddlePosition.y + (topPaddleProperties.height / 2)))){
+            console.log("The ball bounced off the top paddle.")
             mySphereVector.z = mySphereVector.z * -1;
+            topPaddlePosition.setAttribute('color', 'yellow');
+            topPaddleCoolDown = 10;
           } 
           //bottom paddle
           if(((mySpherePosition.x + mySphereProperties.radius) > (bottomPaddlePosition.x - (bottomPaddlePosition.width / 2)))
             && ((mySpherePosition.x + mySphereProperties.radius) < (bottomPaddlePosition.x + (bottomPaddlePosition.width / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) > (bottomPaddlePosition.y - (bottomPaddlePosition.height / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) < (bottomPaddlePosition.y + (bottomPaddlePosition.height / 2)))){
+            console.log("The ball bounced off the bottom paddle.")
             mySphereVector.z = mySphereVector.z * -1;
+            topPaddlePosition.setAttribute('color', 'yellow');
+            topPaddleCoolDown = 10;
           } 
           
         }, intervalLength);
@@ -273,8 +295,8 @@
         <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
         <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
         <!-- Paddles -->
-        <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.8' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
-        <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.8' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
+        <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.9' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
+        <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.9' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
 
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
