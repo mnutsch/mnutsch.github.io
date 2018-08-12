@@ -193,13 +193,13 @@
           if(mySpherePosition.z >= maxZ){
             //console.log("The ball bounced off the max Z border.")
             mySphereVector.z = mySphereVector.z * -1;
-            bottomBumper.setAttribute('color', 'yellow');
+            bottomBumper.setAttribute('color', 'red');
             bottomBumperCoolDown = 10;
           }
           if(mySpherePosition.z <= minZ){
             //console.log("The ball bounced off the min Z border.")
             mySphereVector.z = mySphereVector.z * -1;
-            topBumper.setAttribute('color', 'yellow');
+            topBumper.setAttribute('color', 'red');
             topBumperCoolDown = 10;
           }
           //if the sphere hits a paddle, then reverse it's vector
@@ -325,7 +325,7 @@
     </a-scene>
 
     <!-- add some info at the bottom of the page -->
-    <div style="width:100%">
+    <div>
       <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px; background-color: #444444;'>Ball coordinates will appear here.</span>
     </div>
 
