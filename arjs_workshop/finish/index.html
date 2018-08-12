@@ -105,6 +105,7 @@
         //create variables to track movement vectors      
         var mySphereVector = {};
           mySphereVector.x = 0;
+          mySphereVector.y = 0;
           mySphereVector.z = 0; 
         var topPaddleVector = {};
           topPaddleVector.x = 0;
@@ -206,6 +207,7 @@
             topBumperCoolDown = 10;
           }
           //if the sphere hits a paddle, then reverse it's vector
+          /*
           //top paddle
           if(((mySpherePosition.x + mySphereProperties.radius) > (topPaddlePosition.x - (topPaddleProperties.width / 2)))
             && ((mySpherePosition.x + mySphereProperties.radius) < (topPaddlePosition.x + (topPaddleProperties.width / 2)))
@@ -226,6 +228,7 @@
             topPaddlePosition.setAttribute('color', 'yellow');
             topPaddleCoolDown = 10;
           } 
+          */
           
         }, intervalLength);
 
@@ -238,7 +241,7 @@
   <body style='margin : 0px; overflow: hidden;'>
 
     <!-- add some info at the top of the page -->
-    <div style='top: 10px; width:100%; text-align: center; z-index: 1; color: white; background-color: "#444444";'>
+    <div style='top: 10px; width:100%; text-align: center; z-index: 1; color: white; background-color: #444444;'>
       AR Pong
     </div>    
 
@@ -302,12 +305,6 @@
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
         <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>
 
-        <!-- 3D Model example -->
-        <!-- see: https://aframe.io/docs/0.8.0/primitives/a-obj-model.html -->
-        <!--<a-obj-model id="my3DModel" src="#3DModel-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model>-->
-        <!-- 3D Model example with skin -->
-        <!--<a-obj-model id="my3DModel" src="#3DModel-obj" mtl="#3DModel-mtl" position="0 0 0" rotation="0 0 0" scale="1 1 1" material="opacity: 1.0; side:double;"></a-obj-model>-->
-        
       </a-anchor>
 
       <!-- Define a static camera -->
@@ -317,7 +314,7 @@
 
     <!-- add some info at the bottom left of the page -->
     <div>
-      <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px; background-color: "#444444";'>Ball coordinates will appear here.</span>
+      <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px; background-color: #444444;'>Ball coordinates will appear here.</span>
     </div>
 
   </body>
