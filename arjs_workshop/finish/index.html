@@ -207,18 +207,23 @@
             topBumperCoolDown = 10;
           }
           //if the sphere hits a paddle, then reverse it's vector
-          /*
+          
           //top paddle
-          if(((mySpherePosition.x + mySphereProperties.radius) > (topPaddlePosition.x - (topPaddleProperties.width / 2)))
+          if(
+            ((mySpherePosition.x) > (topPaddlePosition.x + mySphereProperties.radius - (topPaddleProperties.width / 2)))
+            /*
             && ((mySpherePosition.x + mySphereProperties.radius) < (topPaddlePosition.x + (topPaddleProperties.width / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) > (topPaddlePosition.y - (topPaddleProperties.height / 2)))
-            && ((mySpherePosition.y + mySphereProperties.radius) < (topPaddlePosition.y + (topPaddleProperties.height / 2)))){
+            && ((mySpherePosition.y + mySphereProperties.radius) < (topPaddlePosition.y + (topPaddleProperties.height / 2)))
+            */
+            ){
             console.log("The ball bounced off the top paddle.")
             mySphereVector.z = mySphereVector.z * -1;
             topPaddlePosition.setAttribute('color', 'yellow');
             topPaddleCoolDown = 10;
           } 
           //bottom paddle
+          /*
           if(((mySpherePosition.x + mySphereProperties.radius) > (bottomPaddlePosition.x - (bottomPaddlePosition.width / 2)))
             && ((mySpherePosition.x + mySphereProperties.radius) < (bottomPaddlePosition.x + (bottomPaddlePosition.width / 2)))
             && ((mySpherePosition.y + mySphereProperties.radius) > (bottomPaddlePosition.y - (bottomPaddlePosition.height / 2)))
