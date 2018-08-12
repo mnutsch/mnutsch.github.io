@@ -55,7 +55,7 @@
         var leftBumperCoolDown = 0;
         var bottomBumperCoolDown = 0;
         var topPaddleCoolDown = 0;
-        vat bottomPaddleCoolDown = 0;
+        var bottomPaddleCoolDown = 0;
 
         //bind variables to entities
         var myBox = document.getElementById('myBox');      
@@ -134,7 +134,7 @@
           else{
             rightBumper.setAttribute('color', 'blue');
           }
-          
+
           if(topBumperCoolDown > 0){
             topBumperCoolDown = topBumperCoolDown - 1;
           }
