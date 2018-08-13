@@ -270,13 +270,13 @@
             topPaddlePosition.x = minX + (topPaddleProperties.depth / 2);
           }
           if((topPaddlePosition.x + (topPaddleProperties.depth / 2)) > maxX){
-            topPaddlePosition.x = maX - (topPaddleProperties.depth / 2);
+            topPaddlePosition.x = maxX - (topPaddleProperties.depth / 2);
           }
           if((bottomPaddlePosition.x - (bottomPaddleProperties.depth / 2)) < minX){
             bottomPaddlePosition.x = minX + (bottomPaddleProperties.depth / 2);
           }
           if((bottomPaddlePosition.x + (bottomPaddleProperties.depth / 2)) > maxX){
-            bottomPaddlePosition.x = maX - (bottomPaddleProperties.depth / 2);
+            bottomPaddlePosition.x = maxX - (bottomPaddleProperties.depth / 2);
           }
 
         }, intervalLength);
