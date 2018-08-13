@@ -107,8 +107,12 @@
           mySphereVector.z = 0; 
         var topPaddleVector = {};
           topPaddleVector.x = 0;
+          topPaddleVector.y = 0;
+          topPaddleVector.z = 0;
         var bottomPaddleVector = {};
           bottomPaddleVector.x = 0;
+          bottomPaddleVector.y = 0;
+          bottomPaddleVector.z = 0;
 
         //pick a random number between 0.020 and 0.030 for both x and z vectors
         mySphereVector.x = ((Math.floor(Math.random() * 30) + 20) / 1000)
@@ -190,7 +194,6 @@
           }
 
           //move the paddles
-          /*
           topPaddlePosition.x = topPaddlePosition.x + topPaddleVector.x;
           topPaddlePosition.y = topPaddlePosition.y + topPaddleVector.y;
           topPaddlePosition.z = topPaddlePosition.z + topPaddleVector.z;
@@ -199,7 +202,6 @@
           bottomPaddlePosition.y = bottomPaddlePosition.y + bottomPaddleVector.y;
           bottomPaddlePosition.z = bottomPaddlePosition.z + bottomPaddleVector.z;
           bottomPaddle.setAttribute('position', bottomPaddlePosition.x + ' ' + bottomPaddlePosition.y + ' ' + bottomPaddlePosition.z);
-          */
 
           //update the text of the <span>
           myText.textContent = 'Ball Location: X = ' + mySpherePosition.x.toFixed(2) + ", Y = " + mySpherePosition.y.toFixed(2) + ", Z = " + mySpherePosition.z.toFixed(2);
