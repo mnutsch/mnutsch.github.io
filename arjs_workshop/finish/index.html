@@ -197,13 +197,13 @@
           }
 
           //move the paddles
-          topPaddlePosition.x - topPaddlePosition.x + topPaddleVector.x;
-          topPaddlePosition.y - topPaddlePosition.y + topPaddleVector.y;
-          topPaddlePosition.z - topPaddlePosition.z + topPaddleVector.z;
+          topPaddlePosition.x = topPaddlePosition.x + topPaddleVector.x;
+          topPaddlePosition.y = topPaddlePosition.y + topPaddleVector.y;
+          topPaddlePosition.z = topPaddlePosition.z + topPaddleVector.z;
           topPaddle.setAttribute('position', topPaddlePosition.x + ' ' + topPaddlePosition.y + ' ' + topPaddlePosition.z);
-          bottomPaddlePosition.x - bottomPaddlePosition.x + bottomPaddleVector.x;
-          bottomPaddlePosition.y - bottomPaddlePosition.y + bottomPaddleVector.y;
-          bottomPaddlePosition.z - bottomPaddlePosition.z + bottomPaddleVector.z;
+          bottomPaddlePosition.x = bottomPaddlePosition.x + bottomPaddleVector.x;
+          bottomPaddlePosition.y = bottomPaddlePosition.y + bottomPaddleVector.y;
+          bottomPaddlePosition.z = bottomPaddlePosition.z + bottomPaddleVector.z;
           bottomPaddle.setAttribute('position', bottomPaddlePosition.x + ' ' + bottomPaddlePosition.y + ' ' + bottomPaddlePosition.z);
 
           //update the text of the <span>
