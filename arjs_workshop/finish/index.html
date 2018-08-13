@@ -166,31 +166,34 @@
           //console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
 
           //randomly change the vectors of the paddles
-          topPaddleVector.x = -0.02;
-          /*
           //top paddle
           var randomNumber = Math.floor(Math.random() * 10);
           if(randomNumber == 0){
             topPaddleVector.x = 0;
+            console.log("stopping movement of the top paddle.");
           }
           else if(randomNumber == 1){
             topPaddleVector.x = -0.02;
+            console.log("starting left movement of the top paddle.");
           }
           else if(randomNumber == 2){
             topPaddleVector.x = 0.02;
+            console.log("starting right movement of the top paddle.");
           }
           //bottom paddle
           randomNumber = Math.floor(Math.random() * 10);
           if(randomNumber == 0){
             bottomPaddleVector.x = 0;
+            console.log("stopping movement of the bottom paddle.");
           }
           else if(randomNumber == 1){
             bottomPaddleVector.x = -0.02;
+            console.log("starting left movement of the bottom paddle.");
           }
           else if(randomNumber == 2){
             bottomPaddleVector.x = 0.02;
+            console.log("starting right movement of the bottom paddle.");
           }
-          */
 
           //move the paddles
           topPaddlePosition.x - topPaddlePosition.x + topPaddleVector.x;
