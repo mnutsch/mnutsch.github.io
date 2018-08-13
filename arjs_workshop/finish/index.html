@@ -267,9 +267,11 @@
           } 
           //if the paddle reaches the edge then reset it's location
           if((topPaddlePosition.x - (topPaddleProperties.depth / 2)) < minX){
+            console.log("topPaddlePosition < minX");
             topPaddlePosition.x = minX + (topPaddleProperties.depth / 2);
           }
           if((topPaddlePosition.x + (topPaddleProperties.depth / 2)) > maxX){
+            console.log("topPaddlePosition > maxX");
             topPaddlePosition.x = maxX - (topPaddleProperties.depth / 2);
           }
           if((bottomPaddlePosition.x - (bottomPaddleProperties.depth / 2)) < minX){
