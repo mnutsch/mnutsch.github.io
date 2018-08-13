@@ -6,7 +6,7 @@
     AR.js workshop
     Author: Matt Nutsch
     Date Created: 6-20-2018
-    Date Last Edited: 8-11-2018
+    Date Last Edited: 8-12-2018
     Description: This is sample code for a workshop on developing an AR.js app.
     Notes:
     The implementations of AR.js are based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
@@ -82,11 +82,11 @@
         var topPaddlePosition = {};
           topPaddlePosition.x = 0;
           topPaddlePosition.y = 0.05;
-          topPaddlePosition.z = -0.9;
+          topPaddlePosition.z = -0.86;
         var bottomPaddlePosition = {};
           bottomPaddlePosition.x = 0;
           bottomPaddlePosition.y = 0.05;
-          bottomPaddlePosition.z = 0.9;
+          bottomPaddlePosition.z = 0.86;
 
         //initialize variables to track object properties
         var topPaddleProperties = {};
@@ -195,15 +195,28 @@
             mySphereVector.z = mySphereVector.z * -1;
             bottomBumper.setAttribute('color', 'red');
             bottomBumperCoolDown = 10;
+            //reset the velocity and location of the ball
+            mySphereVector.x = ((Math.floor(Math.random() * 30) + 20) / 1000)
+            mySphereVector.z = ((Math.floor(Math.random() * 30) + 20) / 1000)
+            mySpherePosition.x = 0;
+            mySpherePosition.z = 0;
+            //increment the player's score
+            //DEV NOTE: add code here
           }
           if(mySpherePosition.z <= minZ){
             //console.log("The ball bounced off the min Z border.")
             mySphereVector.z = mySphereVector.z * -1;
             topBumper.setAttribute('color', 'red');
             topBumperCoolDown = 10;
+            //reset the velocity and location of the ball
+            mySphereVector.x = ((Math.floor(Math.random() * 30) + 20) / 1000)
+            mySphereVector.z = ((Math.floor(Math.random() * 30) + 20) / 1000)
+            mySpherePosition.x = 0;
+            mySpherePosition.z = 0;
+            //increment the player's score
+            //DEV NOTE: add code here
           }
           //if the sphere hits a paddle, then reverse it's vector
-          console.log("mySpherePosition.x == ", mySpherePosition.x, "topPaddlePosition.x == ", topPaddlePosition.x, " mySphereProperties.radius == ", mySphereProperties.radius, " (topPaddleProperties.width / 2) == ", (topPaddleProperties.width / 2));
           //top paddle
           if(
             ((mySpherePosition.x) > (topPaddlePosition.x + mySphereProperties.radius - (topPaddleProperties.depth / 2)))
@@ -211,7 +224,7 @@
             && ((mySpherePosition.z + mySphereProperties.radius) > (topPaddlePosition.z - (topPaddleProperties.height / 2)))
             && ((mySpherePosition.z + mySphereProperties.radius) < (topPaddlePosition.z + (topPaddleProperties.height / 2)))
             ){
-            console.log("The ball bounced off the top paddle.")
+            //console.log("The ball bounced off the top paddle.")
             mySphereVector.z = mySphereVector.z * -1;
             topPaddle.setAttribute('color', 'yellow');
             topPaddleCoolDown = 10;
@@ -223,7 +236,7 @@
             && ((mySpherePosition.z + mySphereProperties.radius) > (bottomPaddlePosition.z - (bottomPaddleProperties.height / 2)))
             && ((mySpherePosition.z + mySphereProperties.radius) < (bottomPaddlePosition.z + (bottomPaddleProperties.height / 2)))
             ){
-            console.log("The ball bounced off the bottom paddle.")
+            //console.log("The ball bounced off the bottom paddle.")
             mySphereVector.z = mySphereVector.z * -1;
             bottomPaddle.setAttribute('color', 'yellow');
             bottomPaddleCoolDown = 10;
@@ -310,8 +323,8 @@
         <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
         <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
         <!-- Paddles -->
-        <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.9' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
-        <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.9' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
+        <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.86' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
+        <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.86' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
 
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
