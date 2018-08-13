@@ -165,6 +165,30 @@
           mySphere.setAttribute('position', mySpherePosition.x + ' ' + mySpherePosition.y + ' ' + mySpherePosition.z);
           //console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
 
+          //randomly change the vectors of the paddles
+          //top paddle
+          var randomNumber = Math.floor(Math.random() * 10);
+          if(randomNumber == 0){
+            topPaddleVector.x = 0;
+          }
+          else if(randomNumber == 1){
+            topPaddleVector.x = -0.02;
+          }
+          else if(randomNumber == 2){
+            topPaddleVector.x = 0.02;
+          }
+          //bottom paddle
+          randomNumber = Math.floor(Math.random() * 10);
+          if(randomNumber == 0){
+            bottomPaddleVector.x = 0;
+          }
+          else if(randomNumber == 1){
+            bottomPaddleVector.x = -0.02;
+          }
+          else if(randomNumber == 2){
+            bottomPaddleVector.x = 0.02;
+          }
+
           //move the paddles
           topPaddlePosition.x - topPaddlePosition.x + topPaddleVector.x;
           topPaddlePosition.y - topPaddlePosition.y + topPaddleVector.y;
@@ -321,16 +345,6 @@
     <!-- add some info at the bottom of the page -->
     <div>
       <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px; background-color: #444444;'>Ball coordinates will appear here.</span>
-    </div>
-
-    <!-- add a button at the left of the page -->
-    <div style='z-index: 1; position: fixed; left: 50px; bottom: 40px;'>
-      <button id="leftButton" onclick="bottomPaddleVector = -0.1;">Left</button>
-    </div>
-
-    <!-- add a button at the right of the page -->
-    <div style='z-index: 1; position: fixed; right: 50px; bottom: 40px;'>
-      <button id="rightButton" onclick="bottomPaddleVector = 0.1;">Right</button>
     </div>
 
   </body>
