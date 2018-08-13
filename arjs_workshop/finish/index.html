@@ -166,6 +166,8 @@
           //console.log("mySphere.getAttribute('position') == ", mySphere.getAttribute('position'));
 
           //randomly change the vectors of the paddles
+          topPaddleVector.x = -0.02;
+          /*
           //top paddle
           var randomNumber = Math.floor(Math.random() * 10);
           if(randomNumber == 0){
@@ -188,6 +190,7 @@
           else if(randomNumber == 2){
             bottomPaddleVector.x = 0.02;
           }
+          */
 
           //move the paddles
           topPaddlePosition.x - topPaddlePosition.x + topPaddleVector.x;
