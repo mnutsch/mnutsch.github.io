@@ -167,33 +167,26 @@
 
           //randomly change the vectors of the paddles
           //top paddle
-          var randomNumber = Math.floor(Math.random() * 10);
-          console.log("randomNumber is ", randomNumber);
+          var randomNumber = Math.floor(Math.random() * 30);
           if(randomNumber == 0){
             topPaddleVector.x = 0;
-            console.log("stopping movement of the top paddle.");
           }
           else if(randomNumber == 1){
             topPaddleVector.x = -0.02;
-            console.log("starting left movement of the top paddle.");
           }
           else if(randomNumber == 2){
             topPaddleVector.x = 0.02;
-            console.log("starting right movement of the top paddle.");
           }
           //bottom paddle
-          randomNumber = Math.floor(Math.random() * 10);
+          randomNumber = Math.floor(Math.random() * 30);
           if(randomNumber == 0){
             bottomPaddleVector.x = 0;
-            console.log("stopping movement of the bottom paddle.");
           }
           else if(randomNumber == 1){
             bottomPaddleVector.x = -0.02;
-            console.log("starting left movement of the bottom paddle.");
           }
           else if(randomNumber == 2){
             bottomPaddleVector.x = 0.02;
-            console.log("starting right movement of the bottom paddle.");
           }
 
           //move the paddles
