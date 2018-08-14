@@ -198,10 +198,23 @@
           topPaddlePosition.x = topPaddlePosition.x + topPaddleVector.x;
           topPaddlePosition.y = topPaddlePosition.y + topPaddleVector.y;
           topPaddlePosition.z = topPaddlePosition.z + topPaddleVector.z;
-          topPaddle.setAttribute('position', topPaddlePosition.x + ' ' + topPaddlePosition.y + ' ' + topPaddlePosition.z);
           bottomPaddlePosition.x = bottomPaddlePosition.x + bottomPaddleVector.x;
           bottomPaddlePosition.y = bottomPaddlePosition.y + bottomPaddleVector.y;
-          bottomPaddlePosition.z = bottomPaddlePosition.z + bottomPaddleVector.z;
+          bottomPaddlePosition.z = bottomPaddlePosition.z + bottomPaddleVector.z;          
+          //if the paddle reaches the edge then reset it's location
+          if(topPaddlePosition.x < (minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2))){
+            topPaddlePosition.x = minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2);
+          }
+          if(topPaddlePosition.x > (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2))){
+            topPaddlePosition.x = (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2));
+          }
+          if(bottomPaddlePosition.x < (minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2))){
+            bottomPaddlePosition.x = minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2);
+          }
+          if(bottomPaddlePosition.x > (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2))){
+            bottomPaddlePosition.x = (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2));
+          }
+          topPaddle.setAttribute('position', topPaddlePosition.x + ' ' + topPaddlePosition.y + ' ' + topPaddlePosition.z);
           bottomPaddle.setAttribute('position', bottomPaddlePosition.x + ' ' + bottomPaddlePosition.y + ' ' + bottomPaddlePosition.z);
 
           //update the text of the <span>
@@ -270,19 +283,6 @@
             bottomPaddle.setAttribute('color', 'yellow');
             bottomPaddleCoolDown = 10;
           } 
-          //if the paddle reaches the edge then reset it's location
-          if(topPaddlePosition.x < (minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2))){
-            topPaddlePosition.x = minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2);
-          }
-          if(topPaddlePosition.x > (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2))){
-            topPaddlePosition.x = (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2));
-          }
-          if(bottomPaddlePosition.x < (minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2))){
-            bottomPaddlePosition.x = minX + (bumperWidth / 2) + (topPaddleProperties.depth / 2);
-          }
-          if(bottomPaddlePosition.x > (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2))){
-            bottomPaddlePosition.x = (maxX - (bumperWidth / 2) - (topPaddleProperties.depth / 2));
-          }
 
         }, intervalLength);
 
