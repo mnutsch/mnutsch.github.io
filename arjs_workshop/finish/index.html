@@ -33,11 +33,9 @@
         //define the scene, for ease of interacting with it
         var scene = document.querySelector('a-scene');       
 
-        //for keeping track of the date and time
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date+' '+time;
+        //for keeping track of scores
+        var player1Score = 0;
+        var player2Score = 0;
         
         //for tracking border collisions
         var maxX = 1;
@@ -248,7 +246,8 @@
             bottomBumper.setAttribute('color', 'red');
             bottomBumperCoolDown = 10;
             //increment the player's score
-            //DEV NOTE: add code here
+            player2Score = player2Score + 1;
+            console.log("Player 2 score == ", player2Score);
           }
           if(mySpherePosition.z <= minZ){
             //console.log("The ball bounced off the min Z border.")
@@ -256,7 +255,8 @@
             topBumper.setAttribute('color', 'red');
             topBumperCoolDown = 10;
             //increment the player's score
-            //DEV NOTE: add code here
+            player1Score = player1Score + 1;
+            console.log("Player 1 score == ", player1Score);
           }
           //if the sphere hits a paddle, then reverse it's vector
           //top paddle
