@@ -6,7 +6,7 @@
     AR.js workshop
     Author: Matt Nutsch
     Date Created: 6-20-2018
-    Date Last Edited: 8-12-2018
+    Date Last Edited: 8-13-2018
     Description: This is sample code for a workshop on developing an AR.js app.
     Notes:
     The implementations of AR.js are based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
@@ -248,7 +248,7 @@
             //increment the player's score
             player2Score = player2Score + 1;
             console.log("Player 2 score == ", player2Score);
-            player2ScoreText.setAttribute('value', 'Player 2: ' + player2Score + ' points');
+            player2ScoreText.setAttribute('text', 'value: Player 2: ' + player2Score + ' points');
           }
           if(mySpherePosition.z <= minZ){
             //console.log("The ball bounced off the min Z border.")
@@ -258,7 +258,7 @@
             //increment the player's score
             player1Score = player1Score + 1;
             console.log("Player 1 score == ", player1Score);
-            player1ScoreText.setAttribute('value', 'Player 1: ' + player1Score + ' points');
+            player1ScoreText.setAttribute('text', 'value: Player 1: ' + player1Score + ' points');
           }
           //if the sphere hits a paddle, then reverse it's vector
           //top paddle
@@ -315,7 +315,7 @@
           geometry="primitive: plane; width: 1; height: 1; height: auto"
           material="opacity: 0.5; color: white;"
           position='0 0.25 0'>
-          <a-entity id="planeText" position='0.65 0 0' rotation='290 0 0' scale='2 2 2' text="value: AR Pong" align-"center"></a-entity>
+          <a-entity id="planeText" position='1.0 0 0' rotation='290 0 0' scale='2 2 2' text="value: AR Pong" align-"center"></a-entity>
         </a-plane>
         <a-plane
           id = "player1Label"
