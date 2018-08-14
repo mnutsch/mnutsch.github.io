@@ -307,7 +307,14 @@
 
         <!-- Adding augmented reality items here -->
 
-        <!-- example of text fit onto a plane -->
+        <!--text fit onto a plane -->
+        <a-plane
+          id = "helloWorldPlane"
+          geometry="primitive: plane; width: 1; height: 1; height: auto"
+          material="opacity: 0.5; color: white;"
+          position='0 0.25 0'>
+          <a-entity id="planeText" position='0.65 0 0' rotation='290 0 0' scale='2 2 2' text="value: Augmented Reality" align-"center"></a-entity>
+        </a-plane>
         <a-plane
         id = "player1Label"
         geometry="primitive: plane; width: 1; height: 1; height: auto"
