@@ -270,19 +270,19 @@
             bottomPaddleCoolDown = 10;
           } 
           //if the paddle reaches the edge then reset it's location
-          if(topPaddlePosition.x < minX){
+          if(topPaddlePosition.x < (minX - (topPaddleProperties.depth / 2))){
             console.log("topPaddlePosition < minX");
-            topPaddlePosition.x = minX;
+            topPaddlePosition.x = minX - (topPaddleProperties.depth / 2);
           }
-          if(topPaddlePosition.x > maxX){
+          if(topPaddlePosition.x > (maxX + (topPaddleProperties.depth / 2))){
             console.log("topPaddlePosition > maxX");
-            topPaddlePosition.x = maxX;
+            topPaddlePosition.x = (maxX + (topPaddleProperties.depth / 2));
           }
-          if(bottomPaddlePosition.x < minX){
-            bottomPaddlePosition.x = minX;
+          if(bottomPaddlePosition.x < (minX - (topPaddleProperties.depth / 2))){
+            bottomPaddlePosition.x = minX - (topPaddleProperties.depth / 2);
           }
-          if(bottomPaddlePosition.x > maxX){
-            bottomPaddlePosition.x = maxX;
+          if(bottomPaddlePosition.x > (maxX + (topPaddleProperties.depth / 2))){
+            bottomPaddlePosition.x = (maxX + (topPaddleProperties.depth / 2));
           }
 
         }, intervalLength);
