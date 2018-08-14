@@ -248,6 +248,7 @@
             //increment the player's score
             player2Score = player2Score + 1;
             console.log("Player 2 score == ", player2Score);
+            player2ScoreText.setAttribute('value', 'Player 2: ' + player2Score + ' points');
           }
           if(mySpherePosition.z <= minZ){
             //console.log("The ball bounced off the min Z border.")
@@ -257,6 +258,7 @@
             //increment the player's score
             player1Score = player1Score + 1;
             console.log("Player 1 score == ", player1Score);
+            player1ScoreText.setAttribute('value', 'Player 1: ' + player1Score + ' points');
           }
           //if the sphere hits a paddle, then reverse it's vector
           //top paddle
@@ -309,7 +311,7 @@
 
         <!--text fit onto a plane -->
         <a-plane
-          id = "helloWorldPlane"
+          id = "centerTextLabel"
           geometry="primitive: plane; width: 1; height: 1; height: auto"
           material="opacity: 0.5; color: white;"
           position='0 0.25 0'>
@@ -320,14 +322,14 @@
           geometry="primitive: plane; width: 1; height: 1; height: auto"
           material="opacity: 0.5; color: white;" 
           position='0 0 1.2'>
-          <a-entity id="planeText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 1" align-"center"></a-entity>
+          <a-entity id="player1ScoreText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 1" align-"center"></a-entity>
         </a-plane>
         <a-plane
           id = "player2Label"
           geometry="primitive: plane; width: 1; height: 1; height: auto"
           material="opacity: 0.5; color: white;" 
           position='0 0 -1.2'>
-          <a-entity id="planeText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 2" align-"center"></a-entity>
+          <a-entity id="player2ScoreText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 2" align-"center"></a-entity>
         </a-plane>
 
         <!-- Basic Box -->             
