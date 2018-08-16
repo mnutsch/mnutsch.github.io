@@ -59,7 +59,7 @@ AR Greeting Cards (Kineticards)</br>
 <a href="https://www.mattnutsch.com/gifs/AR_greeting_cards.gif"><img src="https://www.mattnutsch.com/gifs/AR_greeting_cards.gif" width="400"/></a></br></br>
 
 Harry Potter Newspaper</br>
-<a href="https://www.mattnutsch.com/gifs/harry_potter_paper.gif"><img src="https://www.mattnutsch.com/gifs/harry_potter_paper.gif" width="400"/></a></br></br>
+<a href="https://www.mattnutsch.com/gifs/harry_potter_paper_ar.gif"><img src="https://www.mattnutsch.com/gifs/harry_potter_paper_ar.gif" width="400"/></a></br></br>
 
 IoT Device Integration</br>
 <a href="https://www.mattnutsch.com/gifs/iot_device_integ.gif"><img src="https://www.mattnutsch.com/gifs/iot_device_integ.gif" width="400"/></a></br></br>
