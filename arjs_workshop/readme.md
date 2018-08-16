@@ -31,6 +31,48 @@ Step 8: Enjoy!
 
 <hr>
 
+Some different types of Augmented Reality:
+<ul>
+  <li>
+    Image Recognition Target Markers
+  </li>
+  <li>
+    Face Recognition Target Markers
+  </li>
+  <li>
+    Surface Detection
+  </li>
+  <li>
+    Geo Location Based
+  </li>
+  <li>
+    Visually Positioned
+  </li>
+  <li>
+    Other
+  </li>
+</ul>
+
+<hr>
+
+Examples of Possible Products Made With Target Marker AR 
+<ul>
+  <li>
+    AR Greeting Cards (Kineticards)
+  </li>
+  <li>
+    Harry Potter Newspaper
+  </li>
+  <li>
+    IoT Device Integration
+  </li>
+  <li>
+    AR Graffiti
+  </li>
+</ul>
+
+<hr>
+
 More things for you to try:
 
 <ul>
