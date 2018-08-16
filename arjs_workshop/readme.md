@@ -37,28 +37,35 @@ Image Recognition Target Markers</br>
 <a href="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif"><img src="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif" width="400"/></a></br></br>
 
 Face Recognition Target Markers</br>
+<a href="https://www.mattnutsch.com/gifs/face_recognition_resized.gif"><img src="https://www.mattnutsch.com/gifs/face_recognition_resized.gif" width="400"/></a></br></br>
 
 Surface Detection</br>
+<a href="https://www.mattnutsch.com/gifs/markerless_ar.gif"><img src="https://www.mattnutsch.com/gifs/markerless_ar.gif" width="400"/></a></br></br>
 
 Geo Location Based</br>
+<a href="https://www.mattnutsch.com/gifs/pokemon_go.gif"><img src="https://www.mattnutsch.com/gifs/pokemon_go.gif" width="400"/></a></br></br>
 
 Visually Positioned</br>
+<a href="https://www.mattnutsch.com/gifs/.gif"><img src="https://www.mattnutsch.com/gifs/.gif" width="400"/></a></br></br>
 
 Other</br>
+???<br/>
 
 <hr>
 
-Examples of Possible Products Made With Target Marker AR</br>
+Examples of Possible Products Made With Target Marker AR</br><br/>
 
 AR Greeting Cards (Kineticards)</br>
+<a href="https://www.mattnutsch.com/gifs/AR_greeting_cards.gif"><img src="https://www.mattnutsch.com/gifs/AR_greeting_cards.gif" width="400"/></a></br></br>
 
 Harry Potter Newspaper</br>
+<a href="https://www.mattnutsch.com/gifs/harry_potter_paper.gif"><img src="https://www.mattnutsch.com/gifs/harry_potter_paper.gif" width="400"/></a></br></br>
 
 IoT Device Integration</br>
+<a href="https://www.mattnutsch.com/gifs/iot_device_integ.gif"><img src="https://www.mattnutsch.com/gifs/iot_device_integ.gif" width="400"/></a></br></br>
 
 AR Graffiti</br>
-<img src="https://www.mattnutsch.com/gifs/ar_graffiti.gif" />
-    
+<a href="https://www.mattnutsch.com/gifs/ar_graffiti.gif"><img src="https://www.mattnutsch.com/gifs/ar_graffiti.gif" width="400"/></a></br></br>    
 <hr>
 
 More things for you to try:
