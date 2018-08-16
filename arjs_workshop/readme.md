@@ -31,48 +31,34 @@ Step 8: Enjoy!
 
 <hr>
 
-Some different types of Augmented Reality:
-<ul>
-  <li>
-    Image Recognition Target Markers
-    <img src="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif" width="600"/>
-  </li>
-  <li>
-    Face Recognition Target Markers
-  </li>
-  <li>
-    Surface Detection
-  </li>
-  <li>
-    Geo Location Based
-  </li>
-  <li>
-    Visually Positioned
-  </li>
-  <li>
-    Other
-  </li>
-</ul>
+Some different types of Augmented Reality:</br></br>
+
+Image Recognition Target Markers</br>
+<a href="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif"><img src="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif" width="400"/></a></br></br>
+
+Face Recognition Target Markers</br>
+
+Surface Detection</br>
+
+Geo Location Based</br>
+
+Visually Positioned</br>
+
+Other</br>
 
 <hr>
 
-Examples of Possible Products Made With Target Marker AR 
-<ul>
-  <li>
-    AR Greeting Cards (Kineticards)
-  </li>
-  <li>
-    Harry Potter Newspaper
-  </li>
-  <li>
-    IoT Device Integration
-  </li>
-  <li>
-    AR Graffiti
-    <img src="https://www.mattnutsch.com/gifs/ar_graffiti.gif" />
-  </li>
-</ul>
+Examples of Possible Products Made With Target Marker AR</br>
 
+AR Greeting Cards (Kineticards)</br>
+
+Harry Potter Newspaper</br>
+
+IoT Device Integration</br>
+
+AR Graffiti</br>
+<img src="https://www.mattnutsch.com/gifs/ar_graffiti.gif" />
+    
 <hr>
 
 More things for you to try:
