@@ -57,7 +57,7 @@ Examples of Possible Products Made With Target Marker AR</br><br/>
 More things for you to try:
 
 <ul>
-<li>Create an AR Code, so that users can start your augmented reality app with a QR code scanner. (https://webxr.io/arcode-generator/)</li>
+<li>Create an AR Code, so that users can start your augmented reality app with a QR code scanner. [possibly Android only] (https://webxr.io/arcode-generator/)</li>
 
 <li>Incorporate custom 3D models into your app. (Either search for "obj" file or create a file with a 3D graphics editing program.)</li>
 
