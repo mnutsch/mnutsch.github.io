@@ -35,7 +35,7 @@ Some different types of Augmented Reality:
 <ul>
   <li>
     Image Recognition Target Markers
-    <img src="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif" />
+    <img src="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif" width="600"/>
   </li>
   <li>
     Face Recognition Target Markers
