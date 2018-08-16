@@ -31,31 +31,26 @@ Step 8: Enjoy!
 
 <hr>
 
-Some different types of Augmented Reality:</br></br>
-
-<a href="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif">Image Recognition Target Markers</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/face_recognition_resized.gif">Face Recognition Target Markers</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/markerless_ar.gif">Surface Detection</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/pokemon_go.gif">Geo Location Based</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/.gif">Visually Positioned</a></br></br>
-
-Other: ???<br/>
+Some different types of Augmented Reality:</br>
+<ul>
+<li><a href="https://www.mattnutsch.com/gifs/target_markers_chemistry.gif">Image Recognition Target Markers</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/face_recognition_resized.gif">Face Recognition Target Markers</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/markerless_ar.gif">Surface Detection</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/pokemon_go.gif">Geo Location Based</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/.gif">Visually Positioned</a></li>
+<li>Other: ???</li>
+</ul>
 
 <hr>
 
 Examples of Possible Products Made With Target Marker AR</br><br/>
 
-<a href="https://www.mattnutsch.com/gifs/AR_greeting_cards.gif">AR Greeting Cards (Kineticards)</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/harry_potter_paper_ar.gif">Harry Potter Newspaper</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/iot_device_integ.gif">IoT Device Integration</a></br></br>
-
-<a href="https://www.mattnutsch.com/gifs/ar_graffiti.gif">AR Graffiti</a></br></br>    
+<ul>
+<li><a href="https://www.mattnutsch.com/gifs/AR_greeting_cards.gif">AR Greeting Cards (Kineticards)</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/harry_potter_paper_ar.gif">Harry Potter Newspaper</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/iot_device_integ.gif">IoT Device Integration</a></li>
+<li><a href="https://www.mattnutsch.com/gifs/ar_graffiti.gif">AR Graffiti</a></li>
+</ul>
 
 <hr>
 
