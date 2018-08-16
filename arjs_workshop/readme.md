@@ -35,7 +35,7 @@ Some different types of Augmented Reality:
 <ul>
   <li>
     Image Recognition Target Markers
-    <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40"/>
+    <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" />
   </li>
   <li>
     Face Recognition Target Markers
@@ -69,7 +69,7 @@ Examples of Possible Products Made With Target Marker AR
   </li>
   <li>
     AR Graffiti
-    <a href="https://mnutsch.github.io/arjs_workshop/gifs/ar_graffiti.gif"><img src="https://mnutsch.github.io/arjs_workshop/gifs/ar_graffiti.gif" width="40"/></a>
+    <img src="https://mnutsch.github.io/arjs_workshop/gifs/ar_graffiti.gif" />
   </li>
 </ul>
 
