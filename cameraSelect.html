@@ -39,7 +39,8 @@
           //iterate through the mediaDevices and add cameras to the select box
           mediaDevices.forEach(mediaDevice => {
 
-            alert(mediaDevice.label + ": " + mediaDevice.kind); //for debug
+            //alert(mediaDevice.label + ": " + mediaDevice.kind); //for debug
+            console.log("mediaDevice == ", mediaDevice); //for debug
             
             if (mediaDevice.kind === 'videoinput') {
               console.log("mediaDevice == ", mediaDevice);
